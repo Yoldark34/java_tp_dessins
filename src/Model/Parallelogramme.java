@@ -18,12 +18,13 @@ public class Parallelogramme extends Quadrilatere {
     }
 
     @Override
-    public void affiche() {
-        super.affiche();
-        System.out.println("Mes largeurs et mes hauteurs sont respectivement parallèles entre elles.");
+    public String toString() {
+        String result = super.toString();
+        result += "Mes largeurs et mes hauteurs sont respectivement parallèles entre elles.";
         if (this.estCorrect()) {
-            System.out.println("I am a real parallélogramme.");
+            result += "I am a real parallélogramme.";
         }
+        return result;
     }
 
     @Override

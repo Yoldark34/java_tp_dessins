@@ -31,10 +31,6 @@ public class JCanvas extends Canvas {
     public List findDrawables(Point p) {
             this.monProgramme.displayText(p.toString());
             List l = new ArrayList();
-            if (p.x == 70 && p.y == 5)
-                {
-                    this.monProgramme.displayText(p.toString());
-                }
             for (Iterator iter = quadCol.iterator(); iter.hasNext();) {
 
                     Polygone element = (Polygone) iter.next();
@@ -124,7 +120,7 @@ public class JCanvas extends Canvas {
 
     public Point resizeDrawable(Polygone polygoneToResize, Point pointStart, Point pointEnd) {
         Point newPoint = polygoneToResize.resize(pointStart, pointEnd);
-        this.monProgramme.displayText(polygoneToResize.toString()+"\n\n"+pointEnd.toString());
+        this.monProgramme.displayText(polygoneToResize.toString()+"\n\n");
         if (polygoneToResize.estCorrect())
         {
             polygoneToResize.setColor(Color.GREEN);

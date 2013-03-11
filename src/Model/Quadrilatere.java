@@ -26,11 +26,7 @@ public abstract class Quadrilatere extends Polygone {
     public String toString() {
         String result = "";
         result += "Je suis un quadrilatère " + super.type() + ".\n\n";
-        result += "Mes sommets ont pour coordonnées :\n" + super.coordonnees() + ".";
+        result += "Mes sommets ont pour coordonnées :\n" + super.coordonnees() + ".\n";
         return result;
-    }
-
-    public void affiche() {
-        System.out.println(this.toString());
     }
 }

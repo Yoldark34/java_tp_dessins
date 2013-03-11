@@ -24,12 +24,13 @@ public class Losange extends Quadrilatere {
     }
 
     @Override
-    public void affiche() {
-        super.affiche();
-        System.out.println("Je suis un parallélogramme dont deux de mes côtés adjacents sont de même longueur.");
+    public String toString() {
+        String result = super.toString();
+        result += "Je suis un parallélogramme dont deux de mes côtés adjacents sont de même longueur.";
         if (this.estCorrect()) {
-            System.out.println("I am a real losange.");
+            result += "I am a real losange.";
         }
+        return result;
     }
 
     @Override

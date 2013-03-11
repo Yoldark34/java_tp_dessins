@@ -7,9 +7,8 @@ import java.awt.Color;
 import java.awt.Point;
 
 public abstract class Polygone implements IDrawable {
-    
-        protected Color color = Color.BLACK;
 
+    protected Color color = Color.BLACK;
     private List<Point> sommets = new ArrayList<Point>();
     private String type = "non défini";
     private int nombreSommets;
@@ -22,28 +21,28 @@ public abstract class Polygone implements IDrawable {
             this.nombreSommets++;
         }
     }
-    
-    public boolean contient(Point p)
-    {
+
+    public boolean contient(Point p) {
         for (int i = 0; i <= this.nombreSommets - 1; i++) {
             double x = this.getSommet(i).getX();
             double y = this.getSommet(i).getY();
-            if (x == p.getX() && y == p.getY())
-            {
+            if (x == p.getX() && y == p.getY()) {
                 return true;
             }
         }
         return false;
     }
-    
+
     public abstract Boolean estCorrect();
+
+    @Override
+    public abstract String toString();
 
     public String coordonnees() {
         String result = "";
         for (int i = 0; i <= this.nombreSommets - 1; i++) {
-            result += "("+this.getSommet(i).x+","+this.getSommet(i).y+"),\n";
+            result += "(" + this.getSommet(i).x + "," + this.getSommet(i).y + "),\n";
         }
-        result += this.getSommet(this.nombreSommets - 1).toString();
         return result;
     }
 
@@ -62,11 +61,10 @@ public abstract class Polygone implements IDrawable {
     public Point getSommet(int indice) {
         return this.sommets.get(indice);
     }
-    
+
     public int findSommet(java.awt.Point p) {
         for (int i = 0; i <= this.nombreSommets - 1; i++) {
-            if (this.getSommet(i).getX() == p.getX() && this.getSommet(i).getY() == p.getY())
-            {
+            if (this.getSommet(i).getX() == p.getX() && this.getSommet(i).getY() == p.getY()) {
                 return i;
             }
         }
@@ -75,6 +73,7 @@ public abstract class Polygone implements IDrawable {
 
     /**
      * Permet de calculer la longueur entre deux points
+     *
      * @param a Point quelconque a
      * @param b Point quelconque b
      * @return la longueur en type double.
@@ -90,8 +89,7 @@ public abstract class Polygone implements IDrawable {
         double vecteur2Y = d.getY() - c.getY();
         return vecteur1X * vecteur2X + vecteur1Y * vecteur2Y;
     }
-    
-    
+
     public void setColor(Color color) {
         this.color = color;
     }

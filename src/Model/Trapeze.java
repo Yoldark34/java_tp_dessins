@@ -20,12 +20,13 @@ public class Trapeze extends Quadrilatere {
     }
 
     @Override
-    public void affiche() {
-        super.affiche();
-        System.out.println("Je suis un quadrilatère avec deux côtés parallèles.");
+    public String toString() {
+        String result = super.toString();
+        result += "Je suis un quadrilatère avec deux côtés parallèles.";
         if (this.estCorrect()) {
-            System.out.println("I am a real trapezoïde.");
+            result += "I am a real trapezoïde.";
         }
+        return result;
     }
 
     @Override

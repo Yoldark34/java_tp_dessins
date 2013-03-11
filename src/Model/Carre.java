@@ -24,12 +24,13 @@ public class Carre extends Quadrilatere {
     }
 
     @Override
-    public void affiche() {
-        super.affiche();
-        System.out.println("Tous mes côtés sont égaux.");
+    public String toString() {
+        String result = super.toString();
+        result += "Tous mes côtés sont égaux.";
         if (this.estCorrect()) {
-            System.out.println("I am a real square.");
+            result += "I am a real square.";
         }
+        return result;
     }
 
     @Override
@@ -44,7 +45,7 @@ public class Carre extends Quadrilatere {
             Point pSuivant = null;
             Point pSurSuivant = null;
             Point pSurSurSuivant = null;
-            switch (numSommet) 
+            switch (numSommet)
             {
                 case 0:
                     Point p1 = super.getSommet(numSommet);
@@ -76,13 +77,13 @@ public class Carre extends Quadrilatere {
                     super.setSommet(numSommet+1, pSuivant);
                     super.setSommet(numSommet+2, pSurSuivant);
                     break;
-                case 2: 
+                case 2:
                     int max_x = 0;
                     max_x = pointEnd.x-pointStart.x;
-                    
+
                     int max_y = 0;
                     max_y = pointEnd.y-pointStart.y;
-                    
+
                     int max_max = max_x;
                     if (max_x < max_y)
                     {
@@ -108,8 +109,8 @@ public class Carre extends Quadrilatere {
                     break;
             }
             return pCourant;
-                    
-           
+
+
         }
         return pointStart;
     }

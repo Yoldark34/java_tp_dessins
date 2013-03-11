@@ -24,12 +24,13 @@ public class CerfVolant extends Quadrilatere {
     }
 
     @Override
-    public void affiche() {
-        super.affiche();
-        System.out.println("Une de mes diagonales est un axe de symétrie.");
+    public String toString() {
+        String result = super.toString();
+        result += "Une de mes diagonales est un axe de symétrie.";
         if (this.estCorrect()) {
-            System.out.println("I am a real cerf-volant.");
+            result += "I am a real cerf-volant.";
         }
+        return result;
     }
 
     @Override

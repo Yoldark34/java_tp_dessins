@@ -22,12 +22,13 @@ public class Rectangle extends Quadrilatere {
     }
 
     @Override
-    public void affiche() {
-        super.affiche();
-        System.out.println("Je suis un quadrilatère et mes 4 angles sont des angles droits.");
+    public String toString() {
+        String result = super.toString();
+        result += "Je suis un quadrilatère et mes 4 angles sont des angles droits.";
         if (this.estCorrect()) {
-            System.out.println("I am a real rectangle.");
+            result += "I am a real rectangle.";
         }
+        return result;
     }
 
     @Override
