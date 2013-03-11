@@ -4,17 +4,21 @@ import Controller.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 
 public class FenetrePincipale extends JFrame {
 
     Main monProgramme;
+    JPanel east;
     JPanel west;
     JPanel south;
     JPanel center;
@@ -66,6 +70,27 @@ public class FenetrePincipale extends JFrame {
         //
 
         //WEST
+        this.east = new JPanel();
+        //String subject[] = {"Math", "Computer", "Phisics", "Chemestry"};
+        east.setLayout(new BorderLayout());
+        JList poly_list = new JList();
+        poly_list.setPreferredSize(new Dimension(120,400));
+        poly_list.setBackground(Color.lightGray);
+        poly_list.setForeground(Color.BLACK);
+        east.add(poly_list, BorderLayout.CENTER);
+        east.add(poly_list);
+        JButton Sauvegarder = new JButton("Sauvegarder");
+        JButton Charger = new JButton("Charger");
+
+        JPanel buttons = new JPanel();
+                buttons.add(Sauvegarder);
+        buttons.add(Charger);
+
+        east.add(buttons, BorderLayout.SOUTH);
+        content.add(east, BorderLayout.EAST);
+        //
+
+        //WEST
         this.west = new JPanel();
         west.setLayout(new BoxLayout(west, BoxLayout.Y_AXIS));
 
@@ -99,7 +124,7 @@ public class FenetrePincipale extends JFrame {
 
         //SOUTH
         this.south = new JPanel();
-        this.maZoneDeTexte = new JTextArea(15, 65);
+        this.maZoneDeTexte = new JTextArea(15, 80);
         south.add(this.maZoneDeTexte);
         content.add(south, BorderLayout.SOUTH);
         //
@@ -109,7 +134,6 @@ public class FenetrePincipale extends JFrame {
         setTitle("BorderTest");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
-        this.setSize(new Dimension(750, 800));
         this.setResizable(false);
         setVisible(true);
     }
