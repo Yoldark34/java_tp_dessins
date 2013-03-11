@@ -82,17 +82,17 @@ public class FenetrePincipale extends JFrame {
         JButton Sauvegarder = new JButton("Sauvegarder");
         JButton Charger = new JButton("Charger");
 
-        JPanel buttons = new JPanel();
-                buttons.add(Sauvegarder);
-        buttons.add(Charger);
+        JPanel boutons = new JPanel();
+        boutons.add(Sauvegarder);
+        boutons.add(Charger);
 
-        east.add(buttons, BorderLayout.SOUTH);
+        east.add(boutons, BorderLayout.SOUTH);
         content.add(east, BorderLayout.EAST);
         //
 
         //WEST
         this.west = new JPanel();
-        west.setLayout(new BoxLayout(west, BoxLayout.Y_AXIS));
+        west.setLayout(new BorderLayout());
 
         this.monActionCarre = new ActionCarre("Créer un carré", monProgramme);
         JButton carre = new JButton(this.monActionCarre);
@@ -112,12 +112,49 @@ public class FenetrePincipale extends JFrame {
         this.monActionParallelogramme = new ActionParallelogramme("Créer un parallelogramme", monProgramme);
         JButton parallelogramme = new JButton(this.monActionParallelogramme);
 
-        west.add(carre);
-        west.add(rectangle);
-        west.add(cerfVolant);
-        west.add(losange);
-        west.add(trapeze);
-        west.add(parallelogramme);
+        JPanel boutons_polygones = new JPanel();
+        boutons_polygones.setLayout(new BoxLayout(boutons_polygones, BoxLayout.Y_AXIS));
+        boutons_polygones.add(carre);
+        boutons_polygones.add(rectangle);
+        boutons_polygones.add(cerfVolant);
+        boutons_polygones.add(losange);
+        boutons_polygones.add(trapeze);
+        boutons_polygones.add(parallelogramme);
+        west.add(boutons_polygones, BorderLayout.CENTER);
+
+        JPanel boutons_couleurs = new JPanel();
+
+        JButton rouge = new JButton();
+        rouge.setBackground(Color.RED);
+        rouge.setPreferredSize(new Dimension(25, 25));
+        JButton bleu = new JButton();
+        bleu.setBackground(Color.BLUE);
+        bleu.setPreferredSize(new Dimension(25, 25));
+        JButton jaune = new JButton();
+        jaune.setBackground(Color.YELLOW);
+        jaune.setPreferredSize(new Dimension(25, 25));
+        JButton vert = new JButton();
+        vert.setBackground(Color.GREEN);
+        vert.setPreferredSize(new Dimension(25, 25));
+        JButton orange = new JButton();
+        orange.setBackground(Color.ORANGE);
+        orange.setPreferredSize(new Dimension(25, 25));
+        JButton gris = new JButton();
+        gris.setBackground(Color.GRAY);
+        gris.setPreferredSize(new Dimension(25, 25));
+        JButton noir = new JButton();
+        noir.setBackground(Color.BLACK);
+        noir.setPreferredSize(new Dimension(25, 25));
+
+        boutons_couleurs.add(rouge);
+        boutons_couleurs.add(bleu);
+        boutons_couleurs.add(jaune);
+        boutons_couleurs.add(vert);
+        boutons_couleurs.add(orange);
+        boutons_couleurs.add(gris);
+        boutons_couleurs.add(noir);
+
+        west.add(boutons_couleurs, BorderLayout.SOUTH);
 
         content.add(west, BorderLayout.WEST);
         //
