@@ -1,6 +1,5 @@
 package Vue;
 
-
 import Controller.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -33,14 +32,14 @@ public class FenetrePincipale extends JFrame {
 
         JPanel content = new JPanel();
         content.setLayout(new BorderLayout());
-        
+
         //CENTER
         this.monJCanvas = new JCanvas(this.monProgramme);
         this.monJCanvas.setBackground(Color.WHITE);
         new SimpleMouseListener(this.monJCanvas);
         content.add(this.monJCanvas, BorderLayout.CENTER);
         //
-        
+
         //WEST
         this.west = new JPanel();
         west.setLayout(new BoxLayout(west, BoxLayout.Y_AXIS));
@@ -54,7 +53,7 @@ public class FenetrePincipale extends JFrame {
 
         this.monActionCerfVolant = new ActionCerfVolant("Créer un Cerf Volant", monProgramme);
         JButton cerfVolant = new JButton(this.monActionCerfVolant);
-        
+
         this.monActionLosange = new ActionLosange("Créer un losange", monProgramme);
         JButton losange = new JButton(this.monActionLosange);
 
@@ -73,14 +72,14 @@ public class FenetrePincipale extends JFrame {
 
         content.add(west, BorderLayout.WEST);
         //
-        
+
         //SOUTH
         this.south = new JPanel();
         this.maZoneDeTexte = new JTextArea(15, 65);
         south.add(this.maZoneDeTexte);
         content.add(south, BorderLayout.SOUTH);
         //
-        
+
         //... Set window characteristics.
         setContentPane(content);
         setTitle("BorderTest");

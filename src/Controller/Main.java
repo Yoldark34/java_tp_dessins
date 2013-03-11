@@ -17,19 +17,16 @@ public class Main {
     public void setForme(Quadrilatere quad, int i) {
         this.window.monJCanvas.setForme(i, quad);
     }
-    
-    public void activeElement(Polygone p)
-    {
+
+    public void activeElement(Polygone p) {
         this.window.affiche(p.toString());
     }
-    
-    public void displayText(String text)
-    {
+
+    public void displayText(String text) {
         this.window.affiche(text);
     }
-    
-    public void changeCursor(int typeCursor)
-    {
+
+    public void changeCursor(int typeCursor) {
         this.window.setCursor(Cursor.getPredefinedCursor(typeCursor));
     }
 

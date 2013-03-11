@@ -16,7 +16,7 @@ public class SimpleMouseListener extends JCanvasMouseListener {
     Point pointStart;
     Polygone polygoneToResize;
     boolean resizeMode;
-    
+
     public SimpleMouseListener(JCanvas canvas) {
         super(canvas);
     }
@@ -35,9 +35,7 @@ public class SimpleMouseListener extends JCanvasMouseListener {
         if (this.resizeMode) {
             canvas.resizeDrawable(this.polygoneToResize, this.pointStart, e.getPoint());
             this.resizeMode = false;
-        }  
-        else
-        {
+        } else {
             this.pointStart = null;
             this.resizeMode = false;
         }
@@ -47,26 +45,26 @@ public class SimpleMouseListener extends JCanvasMouseListener {
     protected void mousePressedAction(MouseEvent e) {
         List selectedDrawables = super.canvas.findDrawables(e.getPoint());
         if (!selectedDrawables.isEmpty()) {
-            this.polygoneToResize = (Polygone)selectedDrawables.get(0);
+            this.polygoneToResize = (Polygone) selectedDrawables.get(0);
             this.pointStart = e.getPoint();
             this.resizeMode = true;
         }
     }
-    
+
     @Override
     protected void leftClickAction(MouseEvent e) {
         /*List selectedDrawables = super.canvas.findDrawables(e.getPoint());
-        if (!selectedDrawables.isEmpty()) {
-            /*Polygone drawable = (Polygone) selectedDrawables.get(0);
-            canvas.active(drawable);
-        }
-        Point p = e.getPoint();
-        /*IDrawable rect = createDrawable(e);
+         if (!selectedDrawables.isEmpty()) {
+         /*Polygone drawable = (Polygone) selectedDrawables.get(0);
+         canvas.active(drawable);
+         }
+         Point p = e.getPoint();
+         /*IDrawable rect = createDrawable(e);
          if (canvas.isFree(rect.getRectangle())) {
          canvas.addDrawable(rect);
          }*/
     }
-    
+
     @Override
     protected void mouseMoveAction(MouseEvent e) {
         List selectedDrawables = super.canvas.findDrawables(e.getPoint());
@@ -75,9 +73,7 @@ public class SimpleMouseListener extends JCanvasMouseListener {
             Polygone drawable = (Polygone) selectedDrawables.get(0);
             canvas.reColor(drawable, Color.BLUE);
             canvas.changeCursor(Cursor.CROSSHAIR_CURSOR);
-        }
-        else
-        {
+        } else {
             canvas.changeCursor(Cursor.DEFAULT_CURSOR);
         }
         if (!notSelectedDrawables.isEmpty()) {
@@ -85,17 +81,16 @@ public class SimpleMouseListener extends JCanvasMouseListener {
                 Polygone drawable = (Polygone) iter.next();
                 canvas.reColor(drawable, Color.BLACK);
             }
-            
+
         }
-        
-        if (this.resizeMode)
-        {
+
+        if (this.resizeMode) {
             this.pointStart = canvas.resizeDrawable(this.polygoneToResize, this.pointStart, e.getPoint());
             /*boolean resized = canvas.resizeDrawable(this.polygoneToResize, this.pointStart, e.getPoint());
-            if (resized)
-            {
-                this.pointStart = e.getPoint();
-            }*/
+             if (resized)
+             {
+             this.pointStart = e.getPoint();
+             }*/
         }
     }
 
