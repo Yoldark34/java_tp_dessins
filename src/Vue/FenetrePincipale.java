@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class FenetrePincipale extends JFrame {
 
@@ -34,16 +35,39 @@ public class FenetrePincipale extends JFrame {
         content.setLayout(new BorderLayout());
 
         //CENTER
+        this.center = new JPanel();
+        center.setLayout(new BorderLayout());
         this.monJCanvas = new JCanvas(this.monProgramme);
         this.monJCanvas.setBackground(Color.WHITE);
         new SimpleMouseListener(this.monJCanvas);
-        content.add(this.monJCanvas, BorderLayout.CENTER);
+        center.add(this.monJCanvas, BorderLayout.CENTER);
+
+        JPanel pointDefinition = new JPanel();
+        pointDefinition.setLayout(new BoxLayout(pointDefinition, BoxLayout.X_AXIS));
+        JLabel lPoint1 = new JLabel("Point 1 :");
+        JLabel lPoint2 = new JLabel("Point 2 :");
+        JLabel lPoint3 = new JLabel("Point 3 :");
+        JLabel lPoint4 = new JLabel("Point 4 :");
+        JTextField point1 = new JTextField(4);
+        JTextField point2 = new JTextField(4);
+        JTextField point3 = new JTextField(4);
+        JTextField point4 = new JTextField(4);
+        pointDefinition.add(lPoint1);
+        pointDefinition.add(point1);
+        pointDefinition.add(lPoint2);
+        pointDefinition.add(point2);
+        pointDefinition.add(lPoint3);
+        pointDefinition.add(point3);
+        pointDefinition.add(lPoint4);
+        pointDefinition.add(point4);
+        center.add(pointDefinition, BorderLayout.NORTH);
+
+        content.add(center, BorderLayout.CENTER);
         //
 
         //WEST
         this.west = new JPanel();
         west.setLayout(new BoxLayout(west, BoxLayout.Y_AXIS));
-        this.center = new JPanel();
 
         this.monActionCarre = new ActionCarre("Créer un carré", monProgramme);
         JButton carre = new JButton(this.monActionCarre);
