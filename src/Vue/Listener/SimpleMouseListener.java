@@ -33,6 +33,7 @@ public class SimpleMouseListener extends JCanvasMouseListener {
         if (this.resizeMode) {
             canvas.resizeDrawable(this.polygoneToResize, this.pointStart, e.getPoint());
             this.resizeMode = false;
+            canvas.reColor(this.polygoneToResize, Color.BLACK);
         } else {
             this.pointStart = null;
             this.resizeMode = false;
