@@ -24,11 +24,9 @@ public class ActionLosange extends AbstractAction implements IActionObjet {
 
     @Override
     public void agrandir() {
-        // TODO Auto-generated method stub
     }
 
     @Override
     public void reduire() {
-        // TODO Auto-generated method stub
     }
 }

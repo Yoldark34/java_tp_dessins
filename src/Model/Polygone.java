@@ -16,7 +16,7 @@ public abstract class Polygone implements IDrawable, Serializable {
 
     public Polygone(Point... points) {
         this.nombreSommets = 0;
-        //Ajout des points dans l'ensemble des sommets de la forme g�om�trique
+        //Ajout des points dans l'ensemble des sommets de la forme géométrique
         for (Point point : points) {
             this.sommets.add(point);
             this.nombreSommets++;
