@@ -7,6 +7,10 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
+/**
+ *
+ * @author Yohan Sanchez et Forian Haller-Cassandre
+ */
 public class ActionCerfVolant extends AbstractAction implements IActionObjet {
 
     Main maFenetre;

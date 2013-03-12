@@ -2,6 +2,10 @@ package Model;
 
 import java.awt.Point;
 
+/**
+ *
+ * @author Yohan Sanchez et Forian Haller-Cassandre
+ */
 public class Parallelogramme extends Quadrilatere {
 
     public Parallelogramme(Point a, Point b, Point c, Point d) {

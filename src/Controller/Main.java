@@ -9,8 +9,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 import java.util.List;
-//la classe principale du programme. C'est le controleur central
 
+/**
+ * la classe principale du programme. C'est le controleur central
+ *
+ * @author Yohan Sanchez et Forian Haller-Cassandre
+ */
 public class Main {
 
     FenetrePincipale window;

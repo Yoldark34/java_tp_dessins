@@ -4,6 +4,10 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
+/**
+ *
+ * @author Yohan Sanchez et Forian Haller-Cassandre
+ */
 public abstract class Quadrilatere extends Polygone {
 
     public Quadrilatere(Point a, Point b, Point c, Point d) {

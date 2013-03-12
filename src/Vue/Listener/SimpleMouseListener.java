@@ -9,6 +9,10 @@ import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ *
+ * @author Yohan Sanchez et Forian Haller-Cassandre
+ */
 public class SimpleMouseListener extends JCanvasMouseListener {
 
     Point pointStart;

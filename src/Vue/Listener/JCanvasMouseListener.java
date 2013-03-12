@@ -4,6 +4,10 @@ import Vue.JCanvas;
 import java.awt.event.*;
 import javax.swing.SwingUtilities;
 
+/**
+ *
+ * @author Yohan Sanchez et Forian Haller-Cassandre
+ */
 public abstract class JCanvasMouseListener extends MouseAdapter {
 
     protected JCanvas canvas;

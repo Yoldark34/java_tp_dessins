@@ -1,14 +1,16 @@
 package Controller.Action;
 
 import Controller.Main;
+import Interface.*;
+import Model.*;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
-import Interface.*;
-import Model.*;
-import Vue.*;
-import java.awt.Point;
-
+/**
+ *
+ * @author Yohan Sanchez et Forian Haller-Cassandre
+ */
 public class ActionCarre extends AbstractAction implements IActionObjet {
 
     Main maFenetre;

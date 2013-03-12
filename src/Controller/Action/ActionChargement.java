@@ -5,6 +5,10 @@ import Interface.IActionButton;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
+/**
+ *
+ * @author Yohan Sanchez et Forian Haller-Cassandre
+ */
 public class ActionChargement extends AbstractAction implements IActionButton {
 
     Main main;

@@ -7,6 +7,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Yohan Sanchez et Forian Haller-Cassandre
+ */
 public abstract class Polygone implements IDrawable, Serializable {
 
     protected Color color = Color.BLACK;
