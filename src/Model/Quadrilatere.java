@@ -11,6 +11,12 @@ public abstract class Quadrilatere extends Polygone {
         super.setType("quelconque");
     }
 
+    /**
+     * //TODO le mettre dans le polygone et le faire dynamiquement selon le
+     * nombre de sommets Dessine le quadilatere
+     *
+     * @param g
+     */
     @Override
     public void draw(Graphics g) {
         Color c = g.getColor();

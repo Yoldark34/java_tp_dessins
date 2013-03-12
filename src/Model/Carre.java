@@ -46,7 +46,6 @@ public class Carre extends Quadrilatere {
             Point pSurSurSuivant = null;
             switch (numSommet) {
                 case 0:
-                    Point p1 = super.getSommet(numSommet);
                     int lg = super.getSommet(numSommet).x - super.getSommet(numSommet + 1).x;
                     if (lg < 0) {
                         lg = super.getSommet(numSommet + 1).x - super.getSommet(numSommet).x;
@@ -61,10 +60,6 @@ public class Carre extends Quadrilatere {
                     super.setSommet(numSommet + 3, pSurSurSuivant);
                     break;
                 case 1:
-                    Point p0 = super.getSommet(numSommet - 1);
-
-                    Point p2 = super.getSommet(numSommet + 1);
-                    Point p3 = super.getSommet(numSommet + 2);
                     pPrecedent = new Point(super.getSommet(numSommet - 1).x, pointEnd.y);
                     pCourant = new Point(pointEnd.x, pointEnd.y);
                     pSuivant = new Point(pointEnd.x, (pointEnd.x - super.getSommet(numSommet - 1).x) + pointEnd.y);

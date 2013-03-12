@@ -8,6 +8,11 @@ public abstract class JCanvasMouseListener extends MouseAdapter {
 
     protected JCanvas canvas;
 
+    /**
+     * Charge le listener sur le Canvas
+     *
+     * @param canvas
+     */
     public JCanvasMouseListener(JCanvas canvas) {
         super();
         this.canvas = canvas;
@@ -21,9 +26,8 @@ public abstract class JCanvasMouseListener extends MouseAdapter {
 
     @Override
     public void mouseDragged(MouseEvent e) {
-         mouseMoveAction(e);
+        mouseMoveAction(e);
     }
-
 
     @Override
     public void mouseMoved(MouseEvent e) {
@@ -53,11 +57,9 @@ public abstract class JCanvasMouseListener extends MouseAdapter {
     }
 
     protected void mouseReleasedAction(MouseEvent e) {
-
     }
 
     protected void mousePressedAction(MouseEvent e) {
-
     }
 
     protected void rightClickAction(MouseEvent e) {
@@ -67,8 +69,5 @@ public abstract class JCanvasMouseListener extends MouseAdapter {
     }
 
     protected void mouseMoveAction(MouseEvent e) {
-    }
-
-    private void mouseExitedAction(MouseEvent e) {
     }
 }

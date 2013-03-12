@@ -91,7 +91,7 @@ public class FenetrePincipale extends JFrame {
         //String subject[] = {"Math", "Computer", "Phisics", "Chemestry"};
         east.setLayout(new BorderLayout());
         JList poly_list = new JList();
-        poly_list.setPreferredSize(new Dimension(120,400));
+        poly_list.setPreferredSize(new Dimension(120, 400));
         poly_list.setBackground(Color.lightGray);
         poly_list.setForeground(Color.BLACK);
         east.add(poly_list, BorderLayout.CENTER);
@@ -195,11 +195,21 @@ public class FenetrePincipale extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Affiche le texte en parametre dans la zone de texte
+     *
+     * @param toString
+     */
     public void affiche(String toString) {
         this.maZoneDeTexte.setText(toString);
     }
 
-        public void setjTF_Point1_Text(String texte) {
+    /**
+     * Affiche le texte dans la zone de texte ou cache la textbox et son label
+     *
+     * @param texte
+     */
+    public void setjTF_Point1_Text(String texte) {
         if (null == texte) {
             this.jTF_Point1.hide();
             this.jL_Point1.hide();
@@ -210,8 +220,13 @@ public class FenetrePincipale extends JFrame {
         }
     }
 
+    /**
+     * Affiche le texte dans la zone de texte ou cache la textbox et son label
+     *
+     * @param texte
+     */
     public void setjTF_Point2_Text(String texte) {
-                if (null == texte) {
+        if (null == texte) {
             this.jTF_Point2.hide();
             this.jL_Point2.hide();
         } else {
@@ -221,8 +236,13 @@ public class FenetrePincipale extends JFrame {
         }
     }
 
+    /**
+     * Affiche le texte dans la zone de texte ou cache la textbox et son label
+     *
+     * @param texte
+     */
     public void setjTF_Point3_Text(String texte) {
-                if (null == texte) {
+        if (null == texte) {
             this.jTF_Point3.hide();
             this.jL_Point3.hide();
         } else {
@@ -232,8 +252,13 @@ public class FenetrePincipale extends JFrame {
         }
     }
 
+    /**
+     * Affiche le texte dans la zone de texte ou cache la textbox et son label
+     *
+     * @param texte
+     */
     public void setjTF_Point4_Text(String texte) {
-                if (null == texte) {
+        if (null == texte) {
             this.jTF_Point4.hide();
             this.jL_Point4.hide();
         } else {

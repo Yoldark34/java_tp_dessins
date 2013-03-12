@@ -19,6 +19,11 @@ public class SimpleMouseListener extends JCanvasMouseListener {
         super(canvas);
     }
 
+    /**
+     * Supprime le polygone du canvas
+     *
+     * @param e
+     */
     @Override
     protected void rightClickAction(MouseEvent e) {
         List selectedDrawables = super.canvas.findDrawables(e.getPoint());
@@ -28,6 +33,11 @@ public class SimpleMouseListener extends JCanvasMouseListener {
         }
     }
 
+    /**
+     * fini de redimentionner le polygone
+     *
+     * @param e
+     */
     @Override
     protected void mouseReleasedAction(MouseEvent e) {
         if (this.resizeMode) {
@@ -40,6 +50,12 @@ public class SimpleMouseListener extends JCanvasMouseListener {
         }
     }
 
+    /**
+     * Passage en mode redimentionnement pour le premier polygone contenant le
+     * sommet pointé
+     *
+     * @param e
+     */
     @Override
     protected void mousePressedAction(MouseEvent e) {
         List selectedDrawables = super.canvas.findDrawables(e.getPoint());
@@ -47,24 +63,19 @@ public class SimpleMouseListener extends JCanvasMouseListener {
             this.polygoneToResize = (Polygone) selectedDrawables.get(0);
             this.pointStart = e.getPoint();
             this.resizeMode = true;
-            canvas.active((Polygone)selectedDrawables.get(0));
+            canvas.active((Polygone) selectedDrawables.get(0));
         }
     }
 
     @Override
     protected void leftClickAction(MouseEvent e) {
-        /*List selectedDrawables = super.canvas.findDrawables(e.getPoint());
-         if (!selectedDrawables.isEmpty()) {
-         /*Polygone drawable = (Polygone) selectedDrawables.get(0);
-         canvas.active(drawable);
-         }
-         Point p = e.getPoint();
-         /*IDrawable rect = createDrawable(e);
-         if (canvas.isFree(rect.getRectangle())) {
-         canvas.addDrawable(rect);
-         }*/
     }
 
+    /**
+     * Redimmentionne à ma volée le polygone pendant le déplacement de la souris
+     *
+     * @param e
+     */
     @Override
     protected void mouseMoveAction(MouseEvent e) {
         List selectedDrawables = super.canvas.findDrawables(e.getPoint());
@@ -81,24 +92,11 @@ public class SimpleMouseListener extends JCanvasMouseListener {
                 Polygone drawable = (Polygone) iter.next();
                 canvas.reColor(drawable, Color.BLACK);
             }
-
         }
 
         if (this.resizeMode) {
             this.pointStart = canvas.resizeDrawable(this.polygoneToResize, this.pointStart, e.getPoint());
             canvas.active(this.polygoneToResize);
-            /*boolean resized = canvas.resizeDrawable(this.polygoneToResize, this.pointStart, e.getPoint());
-             if (resized)
-             {
-             this.pointStart = e.getPoint();
-             }*/
         }
     }
-
-    /*private IDrawable createDrawable(MouseEvent e) {
-     Point p = e.getPoint();
-     Dimension dim = new Dimension(40, 40);
-     return new RectangleDrawable(Color.RED, p, dim);
-
-     }*/
 }

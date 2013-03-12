@@ -3,19 +3,14 @@ package Vue;
 import Controller.Main;
 import Interface.IDrawable;
 import Model.Polygone;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import javax.swing.JPanel;
-
-import Model.Quadrilatere;
-
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
-import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 public class JCanvas extends Canvas {
 
@@ -51,22 +46,17 @@ public class JCanvas extends Canvas {
         return l;
     }
 
-    public void addDrawable(Polygone quad) {
-        this.quadCol.add(quad);
-        repaint();
-    }
-
     public void removeDrawable(Polygone quad) {
         this.quadCol.remove(quad);
         repaint();
     }
 
-    public void addForme(Quadrilatere quad) {
+    public void addForme(Polygone quad) {
         this.quadCol.add(quad);
         repaint();
     }
 
-    public void setForme(int i, Quadrilatere quad) {
+    public void setForme(int i, Polygone quad) {
         this.quadCol.set(i, quad);
         repaint();
     }
