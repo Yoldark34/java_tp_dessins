@@ -6,7 +6,7 @@ public class Losange extends Quadrilatere {
 
     public Losange(Point a, Point b, Point c, Point d) {
         super(a, b, c, d);
-        super.setType(this.getClass().toString().toLowerCase().substring(6));
+        super.setType(this.getClass().toString().toLowerCase().substring(12));
     }
 
     @Override
