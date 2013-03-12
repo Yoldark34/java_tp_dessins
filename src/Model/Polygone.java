@@ -86,7 +86,7 @@ public abstract class Polygone implements IDrawable, Serializable {
      * Retourne le sommet sous la forme x,y pour un sommet donné.
      *
      * @param i indice du sommet
-     * @return
+     * @return String
      */
     public String getSommetString(int i) {
         if (this.getNombreSommets() >= i) {
@@ -99,7 +99,7 @@ public abstract class Polygone implements IDrawable, Serializable {
     /**
      * Retourne le type du Polygone.
      *
-     * @return
+     * @return String
      */
     public String type() {
         return this.type;
@@ -130,7 +130,7 @@ public abstract class Polygone implements IDrawable, Serializable {
      * Retourne le point d'un sommet
      *
      * @param indice numéro du sommet pour lequel on veut les coordonées
-     * @return
+     * @return Point
      */
     public Point getSommet(int indice) {
         if (this.getNombreSommets() >= indice) {
@@ -144,7 +144,7 @@ public abstract class Polygone implements IDrawable, Serializable {
      * Defini si un point p appartien au polygone
      *
      * @param p sommet à tester
-     * @return
+     * @return int
      */
     public int findSommet(java.awt.Point p) {
         for (int i = 0; i <= this.nombreSommets - 1; i++) {
@@ -173,7 +173,7 @@ public abstract class Polygone implements IDrawable, Serializable {
      * @param b
      * @param c
      * @param d
-     * @return
+     * @return double
      */
     protected double produitScalaire(Point a, Point b, Point c, Point d) {
         double vecteur1X = b.getX() - a.getX();
@@ -195,7 +195,7 @@ public abstract class Polygone implements IDrawable, Serializable {
     /**
      * Retourne la couleur actuelle du polygone
      *
-     * @return
+     * @return Color
      */
     public Color getColor() {
         return this.color;
@@ -207,7 +207,7 @@ public abstract class Polygone implements IDrawable, Serializable {
      *
      * @param pointStart
      * @param pointEnd
-     * @return
+     * @return Point
      */
     public abstract Point resize(Point pointStart, Point pointEnd);
 }
