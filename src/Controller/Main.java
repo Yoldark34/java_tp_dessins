@@ -72,6 +72,16 @@ public class Main {
     }
 
     /**
+     *Permet de vider les textboxs
+     */
+    public void desactiveElement() {
+        this.window.setjTF_Point1_Text("");
+        this.window.setjTF_Point2_Text("");
+        this.window.setjTF_Point3_Text("");
+        this.window.setjTF_Point4_Text("");
+    }
+
+    /**
      * Permet d'afficher du texte dans la zone de texte de la vue
      *
      * @param text

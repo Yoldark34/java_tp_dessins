@@ -122,4 +122,12 @@ public class JCanvas extends Canvas {
         repaint();
         return newPoint;
     }
+
+
+    /**
+     *Demande au programmer de désactiver l'élément car le canvas à fini son action
+     */
+    public void desactiveElement() {
+        this.monProgramme.desactiveElement();
+    }
 }
