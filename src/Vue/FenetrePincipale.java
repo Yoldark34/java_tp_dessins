@@ -2,9 +2,11 @@ package Vue;
 
 import Controller.Action.ActionCarre;
 import Controller.Action.ActionCerfVolant;
+import Controller.Action.ActionChargement;
 import Controller.Action.ActionLosange;
 import Controller.Action.ActionParallelogramme;
 import Controller.Action.ActionRectangle;
+import Controller.Action.ActionSauvegarde;
 import Controller.Action.ActionTrapeze;
 import Controller.Main;
 import Vue.Listener.SimpleMouseListener;
@@ -84,12 +86,15 @@ public class FenetrePincipale extends JFrame {
         poly_list.setForeground(Color.BLACK);
         east.add(poly_list, BorderLayout.CENTER);
         east.add(poly_list);
-        JButton Sauvegarder = new JButton("Sauvegarder");
-        JButton Charger = new JButton("Charger");
+        ActionSauvegarde ac_sauvegarder = new ActionSauvegarde("Sauvegarder", this.monProgramme);
+        JButton bt_sauvegarder = new JButton(ac_sauvegarder);
+
+        ActionChargement ac_charger = new ActionChargement("Charger", this.monProgramme);
+        JButton bt_charger = new JButton(ac_charger);
 
         JPanel boutons = new JPanel();
-        boutons.add(Sauvegarder);
-        boutons.add(Charger);
+        boutons.add(bt_sauvegarder);
+        boutons.add(bt_charger);
 
         east.add(boutons, BorderLayout.SOUTH);
         content.add(east, BorderLayout.EAST);

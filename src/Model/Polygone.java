@@ -1,15 +1,16 @@
 package Model;
 
 import Interface.IDrawable;
-import java.util.ArrayList;
-import java.util.List;
 import java.awt.Color;
 import java.awt.Point;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public abstract class Polygone implements IDrawable {
+public abstract class Polygone implements IDrawable, Serializable {
 
     protected Color color = Color.BLACK;
-    private List<Point> sommets = new ArrayList<Point>();
+    private List<Point> sommets = new ArrayList();
     private String type = "non défini";
     private int nombreSommets;
 

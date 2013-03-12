@@ -94,8 +94,9 @@ public class JCanvas extends Canvas {
         repaint();
     }
 
-    public void setCollection(ArrayList<Quadrilatere> quadCol) {
+    public void setCollection(List quadCol) {
         this.quadCol = quadCol;
+        repaint();
     }
 
     public List getCollection() {
