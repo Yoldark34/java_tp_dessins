@@ -21,6 +21,7 @@ public class ActionTrapeze extends AbstractAction implements IActionObjet {
         this.maFenetre = fenetre;
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         this.monObjet = new Trapeze(new Point(0, 40), new Point(0, 110), new Point(60, 150), new Point(60, 0));
         this.maFenetre.addForme(this.monObjet);

@@ -21,6 +21,7 @@ public class ActionLosange extends AbstractAction implements IActionObjet {
         this.maFenetre = fenetre;
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         this.monObjet = new Losange(new Point(0, 30), new Point(40, 60), new Point(80, 30), new Point(40, 0));
         this.maFenetre.addForme(this.monObjet);

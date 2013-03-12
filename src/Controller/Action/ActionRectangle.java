@@ -21,6 +21,7 @@ public class ActionRectangle extends AbstractAction implements IActionObjet {
         this.maFenetre = maFenetre;
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         this.monObjet = new Rectangle(new Point(0, 0), new Point(0, 70), new Point(30, 70), new Point(30, 0));
         this.maFenetre.addForme(this.monObjet);

@@ -21,6 +21,7 @@ public class ActionParallelogramme extends AbstractAction implements IActionObje
         this.maFenetre = fenetre;
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         this.monObjet = new Trapeze(new Point(0, 20), new Point(0, 70), new Point(30, 50), new Point(30, 0));
         this.maFenetre.addForme(this.monObjet);
