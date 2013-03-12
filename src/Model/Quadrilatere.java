@@ -16,7 +16,7 @@ public abstract class Quadrilatere extends Polygone {
     @Override
     public String toString() {
         String result = "";
-        result += "Je suis un quadrilatère " + super.type() + ".\n\n";
+        result += "Je suis un quadrilatère " + super.getType() + ".\n\n";
         result += "Mes sommets ont pour coordonnées :\n" + super.coordonnees() + ".\n";
         return result;
     }

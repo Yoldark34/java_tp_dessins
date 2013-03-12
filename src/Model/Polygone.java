@@ -101,7 +101,7 @@ public abstract class Polygone implements IDrawable, Serializable {
      *
      * @return String
      */
-    public String type() {
+    public String getType() {
         return this.type;
     }
 

@@ -53,11 +53,13 @@ public class JCanvas extends Canvas {
     public void removeDrawable(Polygone quad) {
         this.quadCol.remove(quad);
         repaint();
+        this.monProgramme.raffraichiListePolygones();
     }
 
     public void addForme(Polygone quad) {
         this.quadCol.add(quad);
         repaint();
+        this.monProgramme.raffraichiListePolygones();
     }
 
     public void setForme(int i, Polygone quad) {
@@ -72,10 +74,6 @@ public class JCanvas extends Canvas {
         g.fillRect(0, 0, 800, 800);
 
         g.setColor(Color.RED);
-        /*for (int i = 0; i < quadCol.size(); i++) {
-         quadCol.get(i).draw(g);
-         }*/
-
         for (Iterator iter = quadCol.iterator(); iter.hasNext();) {
             IDrawable d = (IDrawable) iter.next();
             d.draw(g);

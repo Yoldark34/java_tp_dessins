@@ -14,6 +14,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -34,14 +35,15 @@ public class FenetrePincipale extends JFrame {
     JPanel south;
     JPanel center;
     JLabel monTexte;
-    public JTextField jTF_Point1;
-    public JTextField jTF_Point2;
-    public JTextField jTF_Point3;
-    public JTextField jTF_Point4;
+    JTextField jTF_Point1;
+    JTextField jTF_Point2;
+    JTextField jTF_Point3;
+    JTextField jTF_Point4;
     JLabel jL_Point1;
     JLabel jL_Point2;
     JLabel jL_Point3;
     JLabel jL_Point4;
+    JList<String> jl_Polygones;
     ActionCarre monActionCarre;
     ActionRectangle monActionRectangle;
     ActionCerfVolant monActionCerfVolant;
@@ -90,16 +92,16 @@ public class FenetrePincipale extends JFrame {
         content.add(center, BorderLayout.CENTER);
         //
 
-        //WEST
+        //EAST
         this.east = new JPanel();
         //String subject[] = {"Math", "Computer", "Phisics", "Chemestry"};
         east.setLayout(new BorderLayout());
-        JList poly_list = new JList();
-        poly_list.setPreferredSize(new Dimension(120, 400));
-        poly_list.setBackground(Color.lightGray);
-        poly_list.setForeground(Color.BLACK);
-        east.add(poly_list, BorderLayout.CENTER);
-        east.add(poly_list);
+        jl_Polygones = new JList<String>();
+        jl_Polygones.setPreferredSize(new Dimension(120, 400));
+        jl_Polygones.setBackground(Color.lightGray);
+        jl_Polygones.setForeground(Color.BLACK);
+        east.add(jl_Polygones, BorderLayout.CENTER);
+        east.add(jl_Polygones);
         ActionSauvegarde ac_sauvegarder = new ActionSauvegarde("Sauvegarder", this.monProgramme);
         JButton bt_sauvegarder = new JButton(ac_sauvegarder);
 
@@ -270,5 +272,13 @@ public class FenetrePincipale extends JFrame {
             this.jL_Point4.show();
             this.jTF_Point4.setText(texte);
         }
+    }
+
+    /**
+     *Ajoute le model dans la jlist pour lui permetre d'avoir des éléments
+     * @param model
+     */
+    public void jl_PolygonesSetModel(DefaultListModel model) {
+        this.jl_Polygones.setModel(model);
     }
 }

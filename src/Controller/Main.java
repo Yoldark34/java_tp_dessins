@@ -1,5 +1,6 @@
 package Controller;
 
+import Interface.IDrawable;
 import Model.Polygone;
 import Vue.FenetrePincipale;
 import java.awt.Cursor;
@@ -7,8 +8,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 /**
  * la classe principale du programme. C'est le controleur central
@@ -127,5 +131,16 @@ public class Main {
             System.out.println("Problem serializing: " + e);
         }
         this.window.monJCanvas.setCollection(collection);
+    }
+
+    public void raffraichiListePolygones() {
+        List collection = this.window.monJCanvas.getCollection();
+        DefaultListModel model = new DefaultListModel();
+        for (Iterator iter = collection.iterator(); iter.hasNext();) {
+            Polygone poly = (Polygone)iter.next();
+            String name = poly.getType();
+            model.addElement(name);
+        }
+        this.window.jl_PolygonesSetModel(model);
     }
 }
