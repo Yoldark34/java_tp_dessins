@@ -79,6 +79,8 @@ public class FenetrePincipale extends JFrame {
         pointDefinition.add(this.jTF_Point3);
         pointDefinition.add(this.jL_Point4);
         pointDefinition.add(this.jTF_Point4);
+        JButton bt_valid = new JButton("Valider");
+        pointDefinition.add(bt_valid);
         center.add(pointDefinition, BorderLayout.NORTH);
 
         content.add(center, BorderLayout.CENTER);
