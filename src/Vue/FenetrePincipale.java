@@ -1,10 +1,16 @@
 package Vue;
 
-import Controller.*;
+import Controller.Action.ActionCarre;
+import Controller.Action.ActionCerfVolant;
+import Controller.Action.ActionLosange;
+import Controller.Action.ActionParallelogramme;
+import Controller.Action.ActionRectangle;
+import Controller.Action.ActionTrapeze;
+import Controller.Main;
+import Vue.Listener.SimpleMouseListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,7 +19,6 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 
 public class FenetrePincipale extends JFrame {
 

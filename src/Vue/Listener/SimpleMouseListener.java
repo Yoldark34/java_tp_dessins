@@ -1,11 +1,9 @@
-package Controller;
+package Vue.Listener;
 
-import Interface.IDrawable;
 import Model.Polygone;
 import Vue.JCanvas;
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;

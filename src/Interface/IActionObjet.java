@@ -2,7 +2,7 @@ package Interface;
 
 import java.awt.event.ActionEvent;
 
-public interface ActionObjet {
+public interface IActionObjet {
 
     public abstract void actionPerformed(ActionEvent e);
 
