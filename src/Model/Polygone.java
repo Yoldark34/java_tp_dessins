@@ -14,6 +14,10 @@ public abstract class Polygone implements IDrawable, Serializable {
     private String type = "non défini";
     private int nombreSommets;
 
+    public int getNombreSommets() {
+        return nombreSommets;
+    }
+
     public Polygone(Point... points) {
         this.nombreSommets = 0;
         //Ajout des points dans l'ensemble des sommets de la forme géométrique
@@ -45,6 +49,10 @@ public abstract class Polygone implements IDrawable, Serializable {
             result += "(" + this.getSommet(i).x + "," + this.getSommet(i).y + "),\n";
         }
         return result;
+    }
+
+    public String getSommetString(int i) {
+        return this.getSommet(i).x + "," + this.getSommet(i).y;
     }
 
     public String type() {

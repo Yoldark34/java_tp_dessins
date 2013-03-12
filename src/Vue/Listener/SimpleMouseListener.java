@@ -46,6 +46,7 @@ public class SimpleMouseListener extends JCanvasMouseListener {
             this.polygoneToResize = (Polygone) selectedDrawables.get(0);
             this.pointStart = e.getPoint();
             this.resizeMode = true;
+            canvas.active((Polygone)selectedDrawables.get(0));
         }
     }
 
@@ -84,6 +85,7 @@ public class SimpleMouseListener extends JCanvasMouseListener {
 
         if (this.resizeMode) {
             this.pointStart = canvas.resizeDrawable(this.polygoneToResize, this.pointStart, e.getPoint());
+            canvas.active(this.polygoneToResize);
             /*boolean resized = canvas.resizeDrawable(this.polygoneToResize, this.pointStart, e.getPoint());
              if (resized)
              {

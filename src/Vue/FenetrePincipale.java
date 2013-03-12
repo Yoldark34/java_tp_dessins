@@ -30,6 +30,14 @@ public class FenetrePincipale extends JFrame {
     JPanel south;
     JPanel center;
     JLabel monTexte;
+    public JTextField jTF_Point1;
+    public JTextField jTF_Point2;
+    public JTextField jTF_Point3;
+    public JTextField jTF_Point4;
+    JLabel jL_Point1;
+    JLabel jL_Point2;
+    JLabel jL_Point3;
+    JLabel jL_Point4;
     ActionCarre monActionCarre;
     ActionRectangle monActionRectangle;
     ActionCerfVolant monActionCerfVolant;
@@ -55,22 +63,22 @@ public class FenetrePincipale extends JFrame {
 
         JPanel pointDefinition = new JPanel();
         pointDefinition.setLayout(new BoxLayout(pointDefinition, BoxLayout.X_AXIS));
-        JLabel lPoint1 = new JLabel("Point 1 :");
-        JLabel lPoint2 = new JLabel("Point 2 :");
-        JLabel lPoint3 = new JLabel("Point 3 :");
-        JLabel lPoint4 = new JLabel("Point 4 :");
-        JTextField point1 = new JTextField(4);
-        JTextField point2 = new JTextField(4);
-        JTextField point3 = new JTextField(4);
-        JTextField point4 = new JTextField(4);
-        pointDefinition.add(lPoint1);
-        pointDefinition.add(point1);
-        pointDefinition.add(lPoint2);
-        pointDefinition.add(point2);
-        pointDefinition.add(lPoint3);
-        pointDefinition.add(point3);
-        pointDefinition.add(lPoint4);
-        pointDefinition.add(point4);
+        this.jL_Point1 = new JLabel("Point 1 :");
+        this.jL_Point2 = new JLabel("Point 2 :");
+        this.jL_Point3 = new JLabel("Point 3 :");
+        this.jL_Point4 = new JLabel("Point 4 :");
+        this.jTF_Point1 = new JTextField(4);
+        this.jTF_Point2 = new JTextField(4);
+        this.jTF_Point3 = new JTextField(4);
+        this.jTF_Point4 = new JTextField(4);
+        pointDefinition.add(this.jL_Point1);
+        pointDefinition.add(this.jTF_Point1);
+        pointDefinition.add(this.jL_Point2);
+        pointDefinition.add(this.jTF_Point2);
+        pointDefinition.add(this.jL_Point3);
+        pointDefinition.add(this.jTF_Point3);
+        pointDefinition.add(this.jL_Point4);
+        pointDefinition.add(this.jTF_Point4);
         center.add(pointDefinition, BorderLayout.NORTH);
 
         content.add(center, BorderLayout.CENTER);
@@ -187,5 +195,49 @@ public class FenetrePincipale extends JFrame {
 
     public void affiche(String toString) {
         this.maZoneDeTexte.setText(toString);
+    }
+
+        public void setjTF_Point1_Text(String texte) {
+        if (null == texte) {
+            this.jTF_Point1.hide();
+            this.jL_Point1.hide();
+        } else {
+            this.jTF_Point1.show();
+            this.jL_Point1.show();
+            this.jTF_Point1.setText(texte);
+        }
+    }
+
+    public void setjTF_Point2_Text(String texte) {
+                if (null == texte) {
+            this.jTF_Point2.hide();
+            this.jL_Point2.hide();
+        } else {
+            this.jTF_Point2.show();
+            this.jL_Point2.show();
+            this.jTF_Point2.setText(texte);
+        }
+    }
+
+    public void setjTF_Point3_Text(String texte) {
+                if (null == texte) {
+            this.jTF_Point3.hide();
+            this.jL_Point3.hide();
+        } else {
+            this.jTF_Point3.show();
+            this.jL_Point3.show();
+            this.jTF_Point3.setText(texte);
+        }
+    }
+
+    public void setjTF_Point4_Text(String texte) {
+                if (null == texte) {
+            this.jTF_Point4.hide();
+            this.jL_Point4.hide();
+        } else {
+            this.jTF_Point4.show();
+            this.jL_Point4.show();
+            this.jTF_Point4.setText(texte);
+        }
     }
 }

@@ -26,7 +26,29 @@ public class Main {
     }
 
     public void activeElement(Polygone p) {
-        this.window.affiche(p.toString());
+        this.window.setjTF_Point1_Text(null);
+        this.window.setjTF_Point2_Text(null);
+        this.window.setjTF_Point3_Text(null);
+        this.window.setjTF_Point4_Text(null);
+        for (int i = 0; i <= p.getNombreSommets() - 1; i++) {
+            switch (i)
+            {
+                case 0:
+                    this.window.setjTF_Point1_Text(p.getSommetString(i));
+                    break;
+                case 1:
+                    this.window.setjTF_Point2_Text(p.getSommetString(i));
+                    break;
+                case 2:
+                    this.window.setjTF_Point3_Text(p.getSommetString(i));
+                    break;
+                case 3:
+                    this.window.setjTF_Point4_Text(p.getSommetString(i));
+                    break;
+            }
+        }
+
+        //this.window.affiche(p.toString());
     }
 
     public void displayText(String text) {
