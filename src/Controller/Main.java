@@ -95,7 +95,7 @@ public class Main {
     public void sauvegarde() {
         List collection = this.window.monJCanvas.getCollection();
         try {
-            FileOutputStream out = new FileOutputStream(new java.io.File("").getAbsolutePath() + Main.NOMFICHIERSERIALIZATION);
+            FileOutputStream out = new FileOutputStream(Main.NOMFICHIERSERIALIZATION);
             ObjectOutputStream oos = new ObjectOutputStream(out);
             oos.writeObject(collection);
             oos.flush();
@@ -110,7 +110,7 @@ public class Main {
     public void chargement() {
         List collection = new LinkedList();
         try {
-            FileInputStream in = new FileInputStream(new java.io.File("").getAbsolutePath() + Main.NOMFICHIERSERIALIZATION);
+            FileInputStream in = new FileInputStream(Main.NOMFICHIERSERIALIZATION);
             ObjectInputStream ois = new ObjectInputStream(in);
             collection = (List) (ois.readObject());
         } catch (Exception e) {
