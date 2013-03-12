@@ -31,8 +31,7 @@ public class Main {
         this.window.setjTF_Point3_Text(null);
         this.window.setjTF_Point4_Text(null);
         for (int i = 0; i <= p.getNombreSommets() - 1; i++) {
-            switch (i)
-            {
+            switch (i) {
                 case 0:
                     this.window.setjTF_Point1_Text(p.getSommetString(i));
                     break;
