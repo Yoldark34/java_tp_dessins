@@ -9,6 +9,7 @@ import Controller.Action.ActionRectangle;
 import Controller.Action.ActionSauvegarde;
 import Controller.Action.ActionTrapeze;
 import Controller.Main;
+import Vue.Listener.SharedListSelectionHandler;
 import Vue.Listener.SimpleMouseListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -22,6 +23,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 
 /**
  *
@@ -100,6 +102,8 @@ public class FenetrePincipale extends JFrame {
         jl_Polygones.setPreferredSize(new Dimension(120, 400));
         jl_Polygones.setBackground(Color.lightGray);
         jl_Polygones.setForeground(Color.BLACK);
+        ListSelectionModel listSelectionModel = jl_Polygones.getSelectionModel();
+        listSelectionModel.addListSelectionListener(new SharedListSelectionHandler(this.monJCanvas));
         east.add(jl_Polygones, BorderLayout.CENTER);
         east.add(jl_Polygones);
         ActionSauvegarde ac_sauvegarder = new ActionSauvegarde("Sauvegarder", this.monProgramme);

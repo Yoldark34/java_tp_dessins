@@ -14,7 +14,8 @@ import java.util.List;
  */
 public abstract class Polygone implements IDrawable, Serializable {
 
-    protected Color color = Color.BLACK;
+    protected Color baseColor = Color.BLACK;
+    protected Color currentColor = Color.BLACK;
     private List<Point> sommets = new ArrayList();
     private String type = "non défini";
     private int nombreSommets;
@@ -40,7 +41,7 @@ public abstract class Polygone implements IDrawable, Serializable {
     @Override
     public void draw(Graphics g) {
         Color c = g.getColor();
-        g.setColor(this.color);
+        g.setColor(this.currentColor);
         for (int i = 0; i < this.nombreSommets - 1; i++) {
             g.drawLine((int) this.getSommet(i).getX(), (int) this.getSommet(i).getY(), (int) this.getSommet(i+1).getX(), (int) this.getSommet(i+1).getY());
             }
@@ -184,12 +185,22 @@ public abstract class Polygone implements IDrawable, Serializable {
     }
 
     /**
-     * Change la couleur du polygone
+     * Change la couleur visible du polygone
      *
      * @param color
      */
-    public void setColor(Color color) {
-        this.color = color;
+    public void setCurrentColor(Color color) {
+        this.currentColor = color;
+    }
+
+     /**
+     * Change la couleur de base et la couleur visible du polygone
+     *
+     * @param color
+     */
+    public void setBaseColor(Color color) {
+        this.currentColor = color;
+        this.baseColor = color;
     }
 
     /**
@@ -197,8 +208,26 @@ public abstract class Polygone implements IDrawable, Serializable {
      *
      * @return Color
      */
-    public Color getColor() {
-        return this.color;
+    public Color getCurrentColor() {
+        return this.currentColor;
+    }
+
+     /**
+     * Retourne la couleur de base actuelle du polygone
+     *
+     * @return Color
+     */
+    public Color getBaseColor() {
+        return this.baseColor;
+    }
+
+     /**
+     * Remet la couleur current sur celle de base
+     *
+     * @return Color
+     */
+    public void resetColor() {
+        this.currentColor = this.baseColor;
     }
 
     /**

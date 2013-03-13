@@ -19,7 +19,7 @@ import java.util.List;
 public class JCanvas extends Canvas {
 
     Main monProgramme;
-    List quadCol = new LinkedList();
+    List<Polygone> quadCol = new LinkedList();
 
     public JCanvas(Main monProgramme) {
         super();
@@ -43,7 +43,7 @@ public class JCanvas extends Canvas {
         List l = new ArrayList();
         for (Iterator iter = quadCol.iterator(); iter.hasNext();) {
             Polygone element = (Polygone) iter.next();
-            if (!element.contient(p) && element.getColor() == Color.BLUE) {
+            if (!element.contient(p) && element.getCurrentColor() == Color.BLUE) {
                 l.add(element);
             }
         }
@@ -91,7 +91,7 @@ public class JCanvas extends Canvas {
         repaint();
     }
 
-    public List getCollection() {
+    public List<Polygone> getCollection() {
         return this.quadCol;
     }
 
@@ -105,7 +105,7 @@ public class JCanvas extends Canvas {
     }
 
     public void reColor(Polygone drawable, Color newColor) {
-        drawable.setColor(newColor);
+        drawable.setCurrentColor(newColor);
         repaint();
     }
 
@@ -113,9 +113,9 @@ public class JCanvas extends Canvas {
         Point newPoint = polygoneToResize.resize(pointStart, pointEnd);
         this.monProgramme.displayText(polygoneToResize.toString() + "\n\n");
         if (polygoneToResize.estCorrect()) {
-            polygoneToResize.setColor(Color.GREEN);
+            polygoneToResize.setCurrentColor(Color.GREEN);
         } else {
-            polygoneToResize.setColor(Color.RED);
+            polygoneToResize.setCurrentColor(Color.RED);
         }
         repaint();
         return newPoint;
