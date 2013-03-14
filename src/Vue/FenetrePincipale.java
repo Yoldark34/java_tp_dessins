@@ -3,6 +3,7 @@ package Vue;
 import Controller.Action.ActionCarre;
 import Controller.Action.ActionCerfVolant;
 import Controller.Action.ActionChargement;
+import Controller.Action.ActionCouleur;
 import Controller.Action.ActionLosange;
 import Controller.Action.ActionParallelogramme;
 import Controller.Action.ActionRectangle;
@@ -48,6 +49,10 @@ public class FenetrePincipale extends JFrame {
     JLabel jL_Point3;
     JLabel jL_Point4;
     JList<String> jl_Polygones;
+
+    public JList<String> getJl_Polygones() {
+        return jl_Polygones;
+    }
     ActionCarre monActionCarre;
     ActionRectangle monActionRectangle;
     ActionCerfVolant monActionCerfVolant;
@@ -55,7 +60,12 @@ public class FenetrePincipale extends JFrame {
     ActionLosange monActionLosange;
     ActionParallelogramme monActionParallelogramme;
     JTextArea maZoneDeTexte;
-    public JCanvas monJCanvas;
+    ListSelectionModel listSelectionModel;
+    JCanvas monJCanvas;
+
+    public JCanvas getMonJCanvas() {
+        return monJCanvas;
+    }
 
     public FenetrePincipale(Main monProgramme) {
         this.monProgramme = monProgramme;
@@ -157,7 +167,8 @@ public class FenetrePincipale extends JFrame {
 
         JPanel boutons_couleurs = new JPanel();
 
-        JButton rouge = new JButton();
+        ActionCouleur ac = new ActionCouleur("", Color.RED, this);
+        JButton rouge = new JButton(ac);
         rouge.setBackground(Color.RED);
         rouge.setPreferredSize(new Dimension(25, 25));
         JButton bleu = new JButton();

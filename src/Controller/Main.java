@@ -34,7 +34,7 @@ public class Main {
      * @param poly
      */
     public void addForme(Polygone poly) {
-        this.window.monJCanvas.addForme(poly);
+        this.window.getMonJCanvas().addForme(poly);
     }
 
     /**
@@ -44,7 +44,7 @@ public class Main {
      * @param i
      */
     public void setForme(Polygone poly, int i) {
-        this.window.monJCanvas.setForme(i, poly);
+        this.window.getMonJCanvas().setForme(i, poly);
     }
 
     /**
@@ -107,7 +107,7 @@ public class Main {
      * Serialise la collection pour la sauvegarder
      */
     public void sauvegarde() {
-        List collection = this.window.monJCanvas.getCollection();
+        List collection = this.window.getMonJCanvas().getCollection();
         try {
             FileOutputStream out = new FileOutputStream(Main.NOMFICHIERSERIALIZATION);
             ObjectOutputStream oos = new ObjectOutputStream(out);
@@ -130,11 +130,11 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Problem serializing: " + e);
         }
-        this.window.monJCanvas.setCollection(collection);
+        this.window.getMonJCanvas().setCollection(collection);
     }
 
     public void raffraichiListePolygones() {
-        List collection = this.window.monJCanvas.getCollection();
+        List collection = this.window.getMonJCanvas().getCollection();
         DefaultListModel model = new DefaultListModel();
         for (Iterator iter = collection.iterator(); iter.hasNext();) {
             Polygone poly = (Polygone)iter.next();
