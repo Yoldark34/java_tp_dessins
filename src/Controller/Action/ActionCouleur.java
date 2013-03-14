@@ -33,7 +33,5 @@ public class ActionCouleur extends AbstractAction implements IActionButton {
             poly.setBaseColor(this.color);
         }
         this.window.getMonJCanvas().repaint();
-        //Polygone poly = this.window.getMonJCanvas().getCollection().get(this.window.getListSelectionModel().getMinSelectionIndex());
-        //this.window.getMonJCanvas().active(poly);
     }
 }

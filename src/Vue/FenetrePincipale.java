@@ -9,6 +9,7 @@ import Controller.Action.ActionParallelogramme;
 import Controller.Action.ActionRectangle;
 import Controller.Action.ActionSauvegarde;
 import Controller.Action.ActionTrapeze;
+import Controller.Action.ActionValider;
 import Controller.Main;
 import Model.listSelectionModel;
 import Vue.Listener.SharedListSelectionHandler;
@@ -100,7 +101,8 @@ public class FenetrePincipale extends JFrame {
         pointDefinition.add(this.jTF_Point3);
         pointDefinition.add(this.jL_Point4);
         pointDefinition.add(this.jTF_Point4);
-        JButton bt_valid = new JButton("Valider");
+        ActionValider ac_valider = new ActionValider("Valider", this.monProgramme);
+        JButton bt_valid = new JButton(ac_valider);
         pointDefinition.add(bt_valid);
         center.add(pointDefinition, BorderLayout.NORTH);
 
@@ -246,6 +248,19 @@ public class FenetrePincipale extends JFrame {
             this.jL_Point1.show();
             this.jTF_Point1.setText(texte);
         }
+    }
+
+     /**
+     * Retorune le texte de la zone de texte, retourne null si la textbox est désactivé
+     *
+     * @param texte String ou null
+     */
+    public String getjTF_Point1_Text() {
+        if (this.jTF_Point1.isVisible()) {
+            return this.jTF_Point1.getText();
+        }
+
+        return null;
     }
 
     /**

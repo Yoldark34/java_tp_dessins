@@ -2,8 +2,10 @@ package Controller;
 
 import Interface.IDrawable;
 import Model.Polygone;
+import Model.Quelconque;
 import Vue.FenetrePincipale;
 import java.awt.Cursor;
+import java.awt.Point;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -144,5 +146,23 @@ public class Main {
             model.addElement(name);
         }
         this.window.jl_PolygonesSetModel(model);
+    }
+
+    public void valider() {
+        int selected[] = this.window.getJl_Polygones().getSelectedIndices();
+        if (selected.length != 0) {
+
+        } else {
+            Point p1 = null;
+            if (null != this.window.getjTF_Point1_Text()) {
+                String[] splited = this.window.getjTF_Point1_Text().split(",");
+                int x = Integer.parseInt(splited[0]);
+                int y = Integer.parseInt(splited[1]);
+                p1 = new Point(x, y);
+            }
+
+            Quelconque poly = new Quelconque(p1);
+            this.window.getMonJCanvas().addForme(poly);
+        }
     }
 }
