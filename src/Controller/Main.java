@@ -97,6 +97,8 @@ public class Main {
             this.window.setjTF_Point3_Text("");
             this.window.setjTF_Point4_Text("");
             this.window.affiche("");
+        } else {
+            this.activeElement(this.window.getMonJCanvas().getCollection().get(selected[selected.length - 1]));
         }
     }
 
