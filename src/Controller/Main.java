@@ -1,8 +1,14 @@
 package Controller;
 
 import Interface.IDrawable;
+import Model.Carre;
+import Model.CerfVolant;
+import Model.Losange;
+import Model.Parallelogramme;
 import Model.Polygone;
 import Model.Quelconque;
+import Model.Rectangle;
+import Model.Trapeze;
 import Vue.FenetrePincipale;
 import java.awt.Cursor;
 import java.awt.Point;
@@ -154,61 +160,94 @@ public class Main {
 
     public void valider() {
         int selected[] = this.window.getJl_Polygones().getSelectedIndices();
+        List<Point> points = new LinkedList<Point>();
+        for (int i = 0; i < 4; i++) {
+            String[] splited = null;
+            int x = -1;
+            int y = -1;
+            switch (i) {
+                case 0:
+                    splited = this.window.getjTF_Point1_Text().split(",");
+                    if (splited.length > 1) {
+                        x = Integer.parseInt(splited[0]);
+                        y = Integer.parseInt(splited[1]);
+                        if (null != this.window.getjTF_Point1_Text()) {
+                            Point p = new Point(x, y);
+                            points.add(p);
+                        }
+                    }
+
+                    break;
+                case 1:
+                    splited = this.window.getjTF_Point2_Text().split(",");
+                    if (splited.length > 1) {
+                        x = Integer.parseInt(splited[0]);
+                        y = Integer.parseInt(splited[1]);
+                        if (null != this.window.getjTF_Point2_Text()) {
+                            points.add(new Point(x, y));
+                        }
+                    }
+
+                    break;
+                case 2:
+                    splited = this.window.getjTF_Point3_Text().split(",");
+                    if (splited.length > 1) {
+                        x = Integer.parseInt(splited[0]);
+                        y = Integer.parseInt(splited[1]);
+                        if (null != this.window.getjTF_Point3_Text()) {
+                            points.add(new Point(x, y));
+                        }
+                    }
+
+                    break;
+                case 3:
+                    splited = this.window.getjTF_Point4_Text().split(",");
+                    if (splited.length > 1) {
+                        x = Integer.parseInt(splited[0]);
+                        y = Integer.parseInt(splited[1]);
+                        if (null != this.window.getjTF_Point4_Text()) {
+                            points.add(new Point(x, y));
+                        }
+                    }
+
+                    break;
+            }
+        }
+
         if (selected.length != 0) {
-        } else {
-            List<Point> points = new LinkedList<Point>();
-            for (int i = 0; i < 4; i++) {
-                String[] splited = null;
-                int x = -1;
-                int y = -1;
-                switch (i) {
-                    case 0:
-                        splited = this.window.getjTF_Point1_Text().split(",");
-                        if (splited.length > 1) {
-                            x = Integer.parseInt(splited[0]);
-                            y = Integer.parseInt(splited[1]);
-                            if (null != this.window.getjTF_Point1_Text()) {
-                                Point p = new Point(x, y);
-                                points.add(p);
-                            }
-                        }
-
-                        break;
-                    case 1:
-                        splited = this.window.getjTF_Point2_Text().split(",");
-                        if (splited.length > 1) {
-                            x = Integer.parseInt(splited[0]);
-                            y = Integer.parseInt(splited[1]);
-                            if (null != this.window.getjTF_Point2_Text()) {
-                                points.add(new Point(x, y));
-                            }
-                        }
-
-                        break;
-                    case 2:
-                        splited = this.window.getjTF_Point3_Text().split(",");
-                        if (splited.length > 1) {
-                            x = Integer.parseInt(splited[0]);
-                            y = Integer.parseInt(splited[1]);
-                            if (null != this.window.getjTF_Point3_Text()) {
-                                points.add(new Point(x, y));
-                            }
-                        }
-
-                        break;
-                    case 3:
-                        splited = this.window.getjTF_Point4_Text().split(",");
-                        if (splited.length > 1) {
-                            x = Integer.parseInt(splited[0]);
-                            y = Integer.parseInt(splited[1]);
-                            if (null != this.window.getjTF_Point4_Text()) {
-                                points.add(new Point(x, y));
-                            }
-                        }
-
-                        break;
+            Polygone polyg = this.window.getMonJCanvas().getCollection().get(selected[selected.length - 1]);
+            if (polyg.getType().equals(Carre.class.toString().toLowerCase().substring(12))) {
+                Carre poly = new Carre(points.get(0),points.get(1),points.get(2),points.get(3));
+                if (poly.estCorrect()) {
+                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+                }
+            } else if (polyg.getType().equals(Rectangle.class.toString().toLowerCase().substring(12))) {
+                Rectangle poly = new Rectangle(points.get(0),points.get(1),points.get(2),points.get(3));
+                if (poly.estCorrect()) {
+                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+                }
+            } else if (polyg.getType().equals(CerfVolant.class.toString().toLowerCase().substring(12))) {
+                CerfVolant poly = new CerfVolant(points.get(0),points.get(1),points.get(2),points.get(3));
+                if (poly.estCorrect()) {
+                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+                }
+            } else if (polyg.getType().equals(Losange.class.toString().toLowerCase().substring(12))) {
+                Losange poly = new Losange(points.get(0),points.get(1),points.get(2),points.get(3));
+                if (poly.estCorrect()) {
+                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+                }
+            } else if (polyg.getType().equals(Parallelogramme.class.toString().toLowerCase().substring(12))) {
+                Parallelogramme poly = new Parallelogramme(points.get(0),points.get(1),points.get(2),points.get(3));
+                if (poly.estCorrect()) {
+                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+                }
+            } else if (polyg.getType().equals(Trapeze.class.toString().toLowerCase().substring(12))) {
+                Trapeze poly = new Trapeze(points.get(0),points.get(1),points.get(2),points.get(3));
+                if (poly.estCorrect()) {
+                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
                 }
             }
+        } else {
             if (points.size() == 1) {
                 Quelconque poly = new Quelconque(points.get(0));
                 this.window.getMonJCanvas().addForme(poly);
