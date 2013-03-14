@@ -131,9 +131,10 @@ public class Main {
             System.out.println("Problem serializing: " + e);
         }
         this.window.getMonJCanvas().setCollection(collection);
+        this.rafraichitListePolygones();
     }
 
-    public void raffraichiListePolygones() {
+    public void rafraichitListePolygones() {
         List collection = this.window.getMonJCanvas().getCollection();
         DefaultListModel model = new DefaultListModel();
         for (Iterator iter = collection.iterator(); iter.hasNext();) {

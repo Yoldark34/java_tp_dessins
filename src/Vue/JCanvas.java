@@ -53,13 +53,13 @@ public class JCanvas extends Canvas {
     public void removeDrawable(Polygone quad) {
         this.quadCol.remove(quad);
         repaint();
-        this.monProgramme.raffraichiListePolygones();
+        this.monProgramme.rafraichitListePolygones();
     }
 
     public void addForme(Polygone quad) {
         this.quadCol.add(quad);
         repaint();
-        this.monProgramme.raffraichiListePolygones();
+        this.monProgramme.rafraichitListePolygones();
     }
 
     public void setForme(int i, Polygone quad) {
