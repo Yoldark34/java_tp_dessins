@@ -22,6 +22,7 @@ import java.util.LinkedList;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 /**
  * la classe principale du programme. C'est le controleur central
@@ -215,37 +216,49 @@ public class Main {
         }
 
         if (selected.length != 0) {
+            Boolean erreur = true;
             Polygone polyg = this.window.getMonJCanvas().getCollection().get(selected[selected.length - 1]);
+            Polygone poly = null;
             if (polyg.getType().equals(Carre.class.toString().toLowerCase().substring(12))) {
-                Carre poly = new Carre(points.get(0),points.get(1),points.get(2),points.get(3));
+                poly = new Carre(points.get(0),points.get(1),points.get(2),points.get(3));
                 if (poly.estCorrect()) {
-                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+                    erreur = false;
                 }
             } else if (polyg.getType().equals(Rectangle.class.toString().toLowerCase().substring(12))) {
-                Rectangle poly = new Rectangle(points.get(0),points.get(1),points.get(2),points.get(3));
+                poly = new Rectangle(points.get(0),points.get(1),points.get(2),points.get(3));
                 if (poly.estCorrect()) {
-                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+                    erreur = false;
                 }
             } else if (polyg.getType().equals(CerfVolant.class.toString().toLowerCase().substring(12))) {
-                CerfVolant poly = new CerfVolant(points.get(0),points.get(1),points.get(2),points.get(3));
+                poly = new CerfVolant(points.get(0),points.get(1),points.get(2),points.get(3));
                 if (poly.estCorrect()) {
-                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+                    erreur = false;
                 }
             } else if (polyg.getType().equals(Losange.class.toString().toLowerCase().substring(12))) {
-                Losange poly = new Losange(points.get(0),points.get(1),points.get(2),points.get(3));
+                poly = new Losange(points.get(0),points.get(1),points.get(2),points.get(3));
                 if (poly.estCorrect()) {
-                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+                    erreur = false;
                 }
             } else if (polyg.getType().equals(Parallelogramme.class.toString().toLowerCase().substring(12))) {
-                Parallelogramme poly = new Parallelogramme(points.get(0),points.get(1),points.get(2),points.get(3));
+                poly = new Parallelogramme(points.get(0),points.get(1),points.get(2),points.get(3));
                 if (poly.estCorrect()) {
-                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+                    erreur = false;
                 }
             } else if (polyg.getType().equals(Trapeze.class.toString().toLowerCase().substring(12))) {
-                Trapeze poly = new Trapeze(points.get(0),points.get(1),points.get(2),points.get(3));
+                poly = new Trapeze(points.get(0),points.get(1),points.get(2),points.get(3));
                 if (poly.estCorrect()) {
-                    this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
+
+                    erreur = false;
                 }
+            }
+
+            if (erreur) {
+                JOptionPane.showMessageDialog(this.window.getComponent(0),
+                    "Le polygone ne respecte pas les conditions de son type, il n'a pas été modifié.",
+                    "Erreur !",
+                    JOptionPane.ERROR_MESSAGE);
+                            } else {
+                this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
             }
         } else {
             if (points.size() == 1) {
