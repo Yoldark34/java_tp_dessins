@@ -5,9 +5,11 @@ import Model.Polygone;
 import Vue.FenetrePincipale;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.util.Iterator;
 import javax.swing.AbstractAction;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
+import javax.swing.ListSelectionModel;
 
 /**
  *
@@ -25,8 +27,12 @@ public class ActionCouleur extends AbstractAction implements IActionButton {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //ListModel<String> test = this.window.getJl_Polygones().getModel();
-
+        int selected[] = this.window.getJl_Polygones().getSelectedIndices();
+        for (int i : selected) {
+            Polygone poly = this.window.getMonJCanvas().getCollection().get(i);
+            poly.setBaseColor(this.color);
+        }
+        this.window.getMonJCanvas().repaint();
         //Polygone poly = this.window.getMonJCanvas().getCollection().get(this.window.getListSelectionModel().getMinSelectionIndex());
         //this.window.getMonJCanvas().active(poly);
     }
