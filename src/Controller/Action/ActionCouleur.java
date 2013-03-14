@@ -5,17 +5,15 @@ import Model.Polygone;
 import Vue.FenetrePincipale;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-import java.util.Iterator;
 import javax.swing.AbstractAction;
-import javax.swing.DefaultListModel;
-import javax.swing.ListModel;
-import javax.swing.ListSelectionModel;
 
 /**
+ * Action pour les boutons de couleurs
  *
  * @author Yohan Sanchez et Forian Haller-Cassandre
  */
 public class ActionCouleur extends AbstractAction implements IActionButton {
+
     FenetrePincipale window;
     Color color;
 

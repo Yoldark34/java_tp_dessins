@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
 /**
+ * Action pour le modèle de trapèze
  *
  * @author Yohan Sanchez et Forian Haller-Cassandre
  */

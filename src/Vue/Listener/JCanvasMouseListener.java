@@ -60,18 +60,38 @@ public abstract class JCanvasMouseListener extends MouseAdapter {
         mouseReleasedAction(e);
     }
 
+    /**
+     * Relachement du clic de la souris
+     * @param e
+     */
     protected void mouseReleasedAction(MouseEvent e) {
     }
 
+    /**
+     * Appuis sur un clic de la souris
+     * @param e
+     */
     protected void mousePressedAction(MouseEvent e) {
     }
 
+    /**
+     * Clic droit de la souris
+     * @param e
+     */
     protected void rightClickAction(MouseEvent e) {
     }
 
+    /**
+     * Clic gauche de la souris
+     * @param e
+     */
     protected void leftClickAction(MouseEvent e) {
     }
 
+    /**
+     * Mouvement de la souris
+     * @param e
+     */
     protected void mouseMoveAction(MouseEvent e) {
     }
 }

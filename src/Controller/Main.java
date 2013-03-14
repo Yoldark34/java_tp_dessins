@@ -1,6 +1,5 @@
 package Controller;
 
-import Interface.IDrawable;
 import Model.Carre;
 import Model.CerfVolant;
 import Model.Losange;
@@ -16,12 +15,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.DefaultListModel;
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 /**

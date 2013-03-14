@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Classe de base pour les polygones
  *
  * @author Yohan Sanchez et Forian Haller-Cassandre
  */
@@ -33,7 +34,7 @@ public abstract class Polygone implements IDrawable, Serializable {
         }
     }
 
-     /**
+    /**
      * Dessine le polygone en partant du premier sommet jusqu'au dernier
      *
      * @param g
@@ -43,9 +44,9 @@ public abstract class Polygone implements IDrawable, Serializable {
         Color c = g.getColor();
         g.setColor(this.currentColor);
         for (int i = 0; i < this.nombreSommets - 1; i++) {
-            g.drawLine((int) this.getSommet(i).getX(), (int) this.getSommet(i).getY(), (int) this.getSommet(i+1).getX(), (int) this.getSommet(i+1).getY());
-            }
-        g.drawLine((int) this.getSommet(this.nombreSommets-1).getX(), (int) this.getSommet(this.nombreSommets-1).getY(), (int) this.getSommet(0).getX(), (int) this.getSommet(0).getY());
+            g.drawLine((int) this.getSommet(i).getX(), (int) this.getSommet(i).getY(), (int) this.getSommet(i + 1).getX(), (int) this.getSommet(i + 1).getY());
+        }
+        g.drawLine((int) this.getSommet(this.nombreSommets - 1).getX(), (int) this.getSommet(this.nombreSommets - 1).getY(), (int) this.getSommet(0).getX(), (int) this.getSommet(0).getY());
         g.setColor(c);
     }
 
@@ -193,7 +194,7 @@ public abstract class Polygone implements IDrawable, Serializable {
         this.currentColor = color;
     }
 
-     /**
+    /**
      * Change la couleur de base et la couleur visible du polygone
      *
      * @param color
@@ -212,7 +213,7 @@ public abstract class Polygone implements IDrawable, Serializable {
         return this.currentColor;
     }
 
-     /**
+    /**
      * Retourne la couleur de base actuelle du polygone
      *
      * @return Color
@@ -221,7 +222,7 @@ public abstract class Polygone implements IDrawable, Serializable {
         return this.baseColor;
     }
 
-     /**
+    /**
      * Remet la couleur current sur celle de base
      *
      * @return Color

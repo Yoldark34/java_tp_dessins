@@ -7,7 +7,7 @@ package Model;
 import java.awt.Point;
 
 /**
- *
+ * Classe pour les Polygones quelconque
  * @author Yoldark34 <yoldark@gmail.com>
  */
 public class Quelconque extends Polygone {

@@ -6,8 +6,9 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 
 /**
+ * Action pour le bouton de sauvegarde
  *
- * @author Yohan Sanchez et Forian Haller-Cassandre
+ * @author Admin
  */
 public class ActionSauvegarde extends AbstractAction implements IActionButton {
 

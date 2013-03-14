@@ -15,23 +15,10 @@ public class SharedListSelectionHandler implements ListSelectionListener {
         this.canvas = canvas;
     }
 
+    @Override
     public void valueChanged(ListSelectionEvent e) {
         ListSelectionModel lsm = (ListSelectionModel)e.getSource();
-
-        int firstIndex = e.getFirstIndex();
-        int lastIndex = e.getLastIndex();
-        boolean isAdjusting = e.getValueIsAdjusting();
-        /*output.append("Event for indexes "
-                      + firstIndex + " - " + lastIndex
-                      + "; isAdjusting is " + isAdjusting
-                      + "; selected indexes:");*/
-
-        if (lsm.isSelectionEmpty()) {
-            //output.append(" <none>");
-        } else {
-            // Find out which indexes are selected.
-            int minIndex = lsm.getMinSelectionIndex();
-            int maxIndex = lsm.getMaxSelectionIndex();
+        if (!lsm.isSelectionEmpty()) {
             for (int i = 0; i <= canvas.getCollection().size() - 1; i++) {
                 if (lsm.isSelectedIndex(i)) {
                     canvas.active((Polygone)canvas.getCollection().get(i));
@@ -42,6 +29,5 @@ public class SharedListSelectionHandler implements ListSelectionListener {
                 }
             }
         }
-        //output.append(newline);
     }
 }

@@ -1,13 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import Vue.JCanvas;
 import javax.swing.DefaultListSelectionModel;
 
 /**
+ * A été créé pour pouvoir déselectionner un élément après un clic sur celui-ci.
  *
  * @author Yoldark34 <yoldark@gmail.com>
  */

@@ -50,6 +50,10 @@ public class JCanvas extends Canvas {
         return l;
     }
 
+    /**
+     * Supprime un polygone de la liste
+     * @param quad
+     */
     public void removeDrawable(Polygone quad) {
         this.quadCol.remove(quad);
         repaint();
@@ -57,12 +61,21 @@ public class JCanvas extends Canvas {
         this.monProgramme.desactiveElement();
     }
 
+    /**
+     * Ajoute un polygone de la liste
+     * @param quad
+     */
     public void addForme(Polygone quad) {
         this.quadCol.add(quad);
         repaint();
         this.monProgramme.rafraichitListePolygones();
     }
 
+    /**
+     * Remplace le polygone voulu par un autre
+     * @param i
+     * @param quad
+     */
     public void setForme(int i, Polygone quad) {
         this.quadCol.set(i, quad);
         repaint();
@@ -83,33 +96,66 @@ public class JCanvas extends Canvas {
         g.setColor(c);
     }
 
+    /**
+     * Rafraichit le canvas
+     */
     public void refresh() {
         repaint();
     }
 
+    /**
+     * Permet de redefinir la collection de polygones
+     * @param quadCol
+     */
     public void setCollection(List quadCol) {
         this.quadCol = quadCol;
         repaint();
     }
 
+    /**
+     * Renvoi la collection de polygones
+     * @return
+     */
     public List<Polygone> getCollection() {
         return this.quadCol;
     }
 
+    /**
+     * Active un polygone pour lui changer sa couleur ou ses coordonnées
+     * @param p
+     */
     public void active(Polygone p) {
         this.monProgramme.activeElement(p);
 
     }
 
+    /**
+     * Change le curseur de la souris
+     * @param cursorType
+     */
     public void changeCursor(int cursorType) {
         this.monProgramme.changeCursor(cursorType);
     }
 
+    /**
+     * Recolore un polygone
+     * @param drawable
+     * @param newColor
+     */
     public void reColor(Polygone drawable, Color newColor) {
         drawable.setCurrentColor(newColor);
         repaint();
     }
 
+    /**
+     * Teste si un polygone est correct pendant le redimentionnement,
+     * L'affoche en vert s'il est correct sinon en rouge.
+     *
+     * @param polygoneToResize
+     * @param pointStart
+     * @param pointEnd
+     * @return Point le Nouveau point de départ du polygone
+     */
     public Point resizeDrawable(Polygone polygoneToResize, Point pointStart, Point pointEnd) {
         Point newPoint = polygoneToResize.resize(pointStart, pointEnd);
         if (polygoneToResize.estCorrect()) {
