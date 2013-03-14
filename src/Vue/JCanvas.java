@@ -54,6 +54,7 @@ public class JCanvas extends Canvas {
         this.quadCol.remove(quad);
         repaint();
         this.monProgramme.rafraichitListePolygones();
+        this.monProgramme.desactiveElement();
     }
 
     public void addForme(Polygone quad) {
