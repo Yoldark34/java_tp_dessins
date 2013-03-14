@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -79,13 +80,16 @@ public class Main {
     }
 
     /**
-     *Permet de vider les textboxs
+     * Permet de vider les textboxs
      */
     public void desactiveElement() {
-        this.window.setjTF_Point1_Text("");
-        this.window.setjTF_Point2_Text("");
-        this.window.setjTF_Point3_Text("");
-        this.window.setjTF_Point4_Text("");
+        int selected[] = this.window.getJl_Polygones().getSelectedIndices();
+        if (selected.length == 0) {
+            this.window.setjTF_Point1_Text("");
+            this.window.setjTF_Point2_Text("");
+            this.window.setjTF_Point3_Text("");
+            this.window.setjTF_Point4_Text("");
+        }
     }
 
     /**
@@ -141,7 +145,7 @@ public class Main {
         List collection = this.window.getMonJCanvas().getCollection();
         DefaultListModel model = new DefaultListModel();
         for (Iterator iter = collection.iterator(); iter.hasNext();) {
-            Polygone poly = (Polygone)iter.next();
+            Polygone poly = (Polygone) iter.next();
             String name = poly.getType();
             model.addElement(name);
         }
@@ -151,18 +155,73 @@ public class Main {
     public void valider() {
         int selected[] = this.window.getJl_Polygones().getSelectedIndices();
         if (selected.length != 0) {
-
         } else {
-            Point p1 = null;
-            if (null != this.window.getjTF_Point1_Text()) {
-                String[] splited = this.window.getjTF_Point1_Text().split(",");
-                int x = Integer.parseInt(splited[0]);
-                int y = Integer.parseInt(splited[1]);
-                p1 = new Point(x, y);
-            }
+            List<Point> points = new LinkedList<Point>();
+            for (int i = 0; i < 4; i++) {
+                String[] splited = null;
+                int x = -1;
+                int y = -1;
+                switch (i) {
+                    case 0:
+                        splited = this.window.getjTF_Point1_Text().split(",");
+                        if (splited.length > 1) {
+                            x = Integer.parseInt(splited[0]);
+                            y = Integer.parseInt(splited[1]);
+                            if (null != this.window.getjTF_Point1_Text()) {
+                                Point p = new Point(x, y);
+                                points.add(p);
+                            }
+                        }
 
-            Quelconque poly = new Quelconque(p1);
-            this.window.getMonJCanvas().addForme(poly);
+                        break;
+                    case 1:
+                        splited = this.window.getjTF_Point2_Text().split(",");
+                        if (splited.length > 1) {
+                            x = Integer.parseInt(splited[0]);
+                            y = Integer.parseInt(splited[1]);
+                            if (null != this.window.getjTF_Point2_Text()) {
+                                points.add(new Point(x, y));
+                            }
+                        }
+
+                        break;
+                    case 2:
+                        splited = this.window.getjTF_Point3_Text().split(",");
+                        if (splited.length > 1) {
+                            x = Integer.parseInt(splited[0]);
+                            y = Integer.parseInt(splited[1]);
+                            if (null != this.window.getjTF_Point3_Text()) {
+                                points.add(new Point(x, y));
+                            }
+                        }
+
+                        break;
+                    case 3:
+                        splited = this.window.getjTF_Point4_Text().split(",");
+                        if (splited.length > 1) {
+                            x = Integer.parseInt(splited[0]);
+                            y = Integer.parseInt(splited[1]);
+                            if (null != this.window.getjTF_Point4_Text()) {
+                                points.add(new Point(x, y));
+                            }
+                        }
+
+                        break;
+                }
+            }
+            if (points.size() == 1) {
+                Quelconque poly = new Quelconque(points.get(0));
+                this.window.getMonJCanvas().addForme(poly);
+            } else if (points.size() == 2) {
+                Quelconque poly = new Quelconque(points.get(0),points.get(1));
+                this.window.getMonJCanvas().addForme(poly);
+            } else if (points.size() == 3) {
+                Quelconque poly = new Quelconque(points.get(0),points.get(1),points.get(2));
+                this.window.getMonJCanvas().addForme(poly);
+            } else if (points.size() == 4) {
+                Quelconque poly = new Quelconque(points.get(0),points.get(1),points.get(2),points.get(3));
+                this.window.getMonJCanvas().addForme(poly);
+            }
         }
     }
 }

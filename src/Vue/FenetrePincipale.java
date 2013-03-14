@@ -210,8 +210,8 @@ public class FenetrePincipale extends JFrame {
         //SOUTH
         this.south = new JPanel();
         this.maZoneDeTexte = new JTextArea(15, 80);
-        this.maZoneDeTexte.setMaximumSize(new Dimension(15,80));
-        this.maZoneDeTexte.setPreferredSize(new Dimension(15,80));
+        this.maZoneDeTexte.setMaximumSize(new Dimension(15, 80));
+        this.maZoneDeTexte.setPreferredSize(new Dimension(15, 80));
         south.add(this.maZoneDeTexte);
         content.add(south, BorderLayout.SOUTH);
         //
@@ -250,8 +250,9 @@ public class FenetrePincipale extends JFrame {
         }
     }
 
-     /**
-     * Retorune le texte de la zone de texte, retourne null si la textbox est désactivé
+    /**
+     * Retorune le texte de la zone de texte, retourne null si la textbox est
+     * désactivé
      *
      * @param texte String ou null
      */
@@ -280,6 +281,20 @@ public class FenetrePincipale extends JFrame {
     }
 
     /**
+     * Retorune le texte de la zone de texte, retourne null si la textbox est
+     * désactivé
+     *
+     * @param texte String ou null
+     */
+    public String getjTF_Point2_Text() {
+        if (this.jTF_Point2.isVisible()) {
+            return this.jTF_Point2.getText();
+        }
+
+        return null;
+    }
+
+    /**
      * Affiche le texte dans la zone de texte ou cache la textbox et son label
      *
      * @param texte
@@ -293,6 +308,20 @@ public class FenetrePincipale extends JFrame {
             this.jL_Point3.show();
             this.jTF_Point3.setText(texte);
         }
+    }
+
+    /**
+     * Retorune le texte de la zone de texte, retourne null si la textbox est
+     * désactivé
+     *
+     * @param texte String ou null
+     */
+    public String getjTF_Point3_Text() {
+        if (this.jTF_Point3.isVisible()) {
+            return this.jTF_Point3.getText();
+        }
+
+        return null;
     }
 
     /**
@@ -312,7 +341,22 @@ public class FenetrePincipale extends JFrame {
     }
 
     /**
-     *Ajoute le model dans la jlist pour lui permetre d'avoir des éléments
+     * Retorune le texte de la zone de texte, retourne null si la textbox est
+     * désactivé
+     *
+     * @param texte String ou null
+     */
+    public String getjTF_Point4_Text() {
+        if (this.jTF_Point4.isVisible()) {
+            return this.jTF_Point4.getText();
+        }
+
+        return null;
+    }
+
+    /**
+     * Ajoute le model dans la jlist pour lui permetre d'avoir des éléments
+     *
      * @param model
      */
     public void jl_PolygonesSetModel(DefaultListModel model) {

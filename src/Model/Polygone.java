@@ -17,7 +17,7 @@ public abstract class Polygone implements IDrawable, Serializable {
     protected Color baseColor = Color.BLACK;
     protected Color currentColor = Color.BLACK;
     private List<Point> sommets = new ArrayList();
-    private String type = "Quelconque";
+    private String type = "quelconque";
     private int nombreSommets;
 
     public int getNombreSommets() {
