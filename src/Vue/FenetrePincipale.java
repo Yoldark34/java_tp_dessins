@@ -252,7 +252,7 @@ public class FenetrePincipale extends JFrame {
      * Retorune le texte de la zone de texte, retourne null si la textbox est
      * désactivé
      *
-     * @param texte String ou null
+     * @return String
      */
     public String getjTF_Point1_Text() {
         if (this.jTF_Point1.isVisible()) {
@@ -282,7 +282,7 @@ public class FenetrePincipale extends JFrame {
      * Retorune le texte de la zone de texte, retourne null si la textbox est
      * désactivé
      *
-     * @param texte String ou null
+     * @return String
      */
     public String getjTF_Point2_Text() {
         if (this.jTF_Point2.isVisible()) {
@@ -312,7 +312,7 @@ public class FenetrePincipale extends JFrame {
      * Retorune le texte de la zone de texte, retourne null si la textbox est
      * désactivé
      *
-     * @param texte String ou null
+     * @return String
      */
     public String getjTF_Point3_Text() {
         if (this.jTF_Point3.isVisible()) {
@@ -342,7 +342,7 @@ public class FenetrePincipale extends JFrame {
      * Retorune le texte de la zone de texte, retourne null si la textbox est
      * désactivé
      *
-     * @param texte String ou null
+     * @return String
      */
     public String getjTF_Point4_Text() {
         if (this.jTF_Point4.isVisible()) {

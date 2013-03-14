@@ -114,7 +114,7 @@ public class JCanvas extends Canvas {
 
     /**
      * Renvoi la collection de polygones
-     * @return
+     * @return List<Polygone>
      */
     public List<Polygone> getCollection() {
         return this.quadCol;

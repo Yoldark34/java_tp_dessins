@@ -222,10 +222,9 @@ public abstract class Polygone implements IDrawable, Serializable {
         return this.baseColor;
     }
 
+
     /**
      * Remet la couleur current sur celle de base
-     *
-     * @return Color
      */
     public void resetColor() {
         this.currentColor = this.baseColor;
