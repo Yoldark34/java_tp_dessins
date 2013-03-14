@@ -168,45 +168,41 @@ public class Main {
             int y = -1;
             switch (i) {
                 case 0:
-                    splited = this.window.getjTF_Point1_Text().split(",");
-                    if (splited.length > 1) {
-                        x = Integer.parseInt(splited[0]);
-                        y = Integer.parseInt(splited[1]);
-                        if (null != this.window.getjTF_Point1_Text()) {
-                            Point p = new Point(x, y);
-                            points.add(p);
+                    if (null != this.window.getjTF_Point1_Text()) {
+                        splited = this.window.getjTF_Point1_Text().split(",");
+                        if (splited.length > 1) {
+                            x = Integer.parseInt(splited[0]);
+                            y = Integer.parseInt(splited[1]);
+                            points.add(new Point(x, y));
                         }
                     }
-
                     break;
                 case 1:
-                    splited = this.window.getjTF_Point2_Text().split(",");
-                    if (splited.length > 1) {
-                        x = Integer.parseInt(splited[0]);
-                        y = Integer.parseInt(splited[1]);
-                        if (null != this.window.getjTF_Point2_Text()) {
+                    if (null != this.window.getjTF_Point2_Text()) {
+                        splited = this.window.getjTF_Point2_Text().split(",");
+                        if (splited.length > 1) {
+                            x = Integer.parseInt(splited[0]);
+                            y = Integer.parseInt(splited[1]);
                             points.add(new Point(x, y));
                         }
                     }
-
                     break;
                 case 2:
-                    splited = this.window.getjTF_Point3_Text().split(",");
-                    if (splited.length > 1) {
-                        x = Integer.parseInt(splited[0]);
-                        y = Integer.parseInt(splited[1]);
-                        if (null != this.window.getjTF_Point3_Text()) {
+                    if (null != this.window.getjTF_Point3_Text()) {
+                        splited = this.window.getjTF_Point3_Text().split(",");
+                        if (splited.length > 1) {
+                            x = Integer.parseInt(splited[0]);
+                            y = Integer.parseInt(splited[1]);
                             points.add(new Point(x, y));
                         }
                     }
-
                     break;
                 case 3:
-                    splited = this.window.getjTF_Point4_Text().split(",");
-                    if (splited.length > 1) {
-                        x = Integer.parseInt(splited[0]);
-                        y = Integer.parseInt(splited[1]);
-                        if (null != this.window.getjTF_Point4_Text()) {
+                    if (null != this.window.getjTF_Point4_Text()) {
+                        splited = this.window.getjTF_Point4_Text().split(",");
+                        if (splited.length > 1) {
+                            x = Integer.parseInt(splited[0]);
+                            y = Integer.parseInt(splited[1]);
                             points.add(new Point(x, y));
                         }
                     }
@@ -247,8 +243,18 @@ public class Main {
             } else if (polyg.getType().equals(Trapeze.class.toString().toLowerCase().substring(12))) {
                 poly = new Trapeze(points.get(0),points.get(1),points.get(2),points.get(3));
                 if (poly.estCorrect()) {
-
                     erreur = false;
+                }
+            } else {
+                erreur = false;//Polygone quelquonque
+                if (points.size() == 1) {
+                    poly = new Quelconque(points.get(0));
+                } else if (points.size() == 2) {
+                    poly = new Quelconque(points.get(0),points.get(1));
+                } else if (points.size() == 3) {
+                    poly = new Quelconque(points.get(0),points.get(1),points.get(2));
+                } else if (points.size() == 4) {
+                    poly = new Quelconque(points.get(0),points.get(1),points.get(2),points.get(3));
                 }
             }
 
@@ -258,6 +264,8 @@ public class Main {
                     "Erreur !",
                     JOptionPane.ERROR_MESSAGE);
                             } else {
+                poly.setBaseColor(polyg.getBaseColor());//Recolor polygones with previous color.
+                poly.setCurrentColor(polyg.getCurrentColor());//Recolor polygon with active color (pink for now)
                 this.window.getMonJCanvas().setForme(selected[selected.length - 1], poly);
             }
         } else {
