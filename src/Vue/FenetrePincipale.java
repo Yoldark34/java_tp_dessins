@@ -24,6 +24,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
@@ -207,6 +208,8 @@ public class FenetrePincipale extends JFrame {
         //SOUTH
         this.south = new JPanel();
         this.maZoneDeTexte = new JTextArea(15, 80);
+        this.maZoneDeTexte.setMaximumSize(new Dimension(15,80));
+        this.maZoneDeTexte.setPreferredSize(new Dimension(15,80));
         south.add(this.maZoneDeTexte);
         content.add(south, BorderLayout.SOUTH);
         //

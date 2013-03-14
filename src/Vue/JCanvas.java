@@ -111,7 +111,6 @@ public class JCanvas extends Canvas {
 
     public Point resizeDrawable(Polygone polygoneToResize, Point pointStart, Point pointEnd) {
         Point newPoint = polygoneToResize.resize(pointStart, pointEnd);
-        this.monProgramme.displayText(polygoneToResize.toString() + "\n\n");
         if (polygoneToResize.estCorrect()) {
             polygoneToResize.setCurrentColor(Color.GREEN);
         } else {

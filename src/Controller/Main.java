@@ -53,6 +53,7 @@ public class Main {
      * @param p
      */
     public void activeElement(Polygone p) {
+        this.displayText(p.toString() + "\n\n");//Affichera toujours le dernier élément selectionné dans la liste !
         this.window.setjTF_Point1_Text(null);
         this.window.setjTF_Point2_Text(null);
         this.window.setjTF_Point3_Text(null);
