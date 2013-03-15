@@ -48,9 +48,9 @@ public class FenetrePincipale extends JFrame {
     JLabel jL_Point2;
     JLabel jL_Point3;
     JLabel jL_Point4;
-    JList<String> jl_Polygones;
+    JList jl_Polygones;
 
-    public JList<String> getJl_Polygones() {
+    public JList getJl_Polygones() {
         return jl_Polygones;
     }
     ActionCarre monActionCarre;
@@ -111,7 +111,7 @@ public class FenetrePincipale extends JFrame {
         this.east = new JPanel();
         //String subject[] = {"Math", "Computer", "Phisics", "Chemestry"};
         east.setLayout(new BorderLayout());
-        jl_Polygones = new JList<String>();
+        jl_Polygones = new JList();
         jl_Polygones.setPreferredSize(new Dimension(120, 400));
         jl_Polygones.setBackground(Color.lightGray);
         jl_Polygones.setForeground(Color.BLACK);
