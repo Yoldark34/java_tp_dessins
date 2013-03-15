@@ -42,7 +42,7 @@ public abstract class Polygone implements IDrawable, Serializable {
     @Override
     public void draw(Graphics g) {
         Color c = g.getColor();
-        g.setColor(this.baseColor);
+        g.setColor(this.currentColor);
         for (int i = 0; i < this.nombreSommets - 1; i++) {
             g.drawLine((int) this.getSommet(i).getX(), (int) this.getSommet(i).getY(), (int) this.getSommet(i + 1).getX(), (int) this.getSommet(i + 1).getY());
         }
